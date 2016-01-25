@@ -74,7 +74,19 @@ body, html {
   overflow-y: auto;
   font-color: #fff;
   margin-top: 32px;
+    -webkit-overflow-scrolling: touch; } /* improve: 修改aside2 progress 样式 */
+  .aside2::-webkit-scrollbar {
+    width: 1px; }
+  .aside2::-webkit-scrollbar-thumb {
+    background: transparent; }
+  .aside2:hover::-webkit-scrollbar-thumb {
+      background: #F5F5F5; }
+  @media screen and (max-width: 585px) {
+    .aside2 {
+        font-size: 15px;
+        top: 50px; }
 }
+
 
 /* 右侧内容栏 */
 .aside3 {
