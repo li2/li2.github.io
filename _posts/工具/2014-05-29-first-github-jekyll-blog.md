@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 我的第一篇 Github & Jekyll Blog
+title: 我的第一篇依靠Jekyll搭建在Github上的博客
 category: 工具
-tags: [github]
+tags: [github, jekyll]
 ---
 
 ## GitHub使用入门指南

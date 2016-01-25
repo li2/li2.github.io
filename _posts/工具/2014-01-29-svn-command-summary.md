@@ -7,11 +7,7 @@ tags: []
 
 - 从远程版本库中检出一份到本地，commit log 需要用到 username: 
 
-        svn checkout URL PATH --username yourname
-        svn checkout https://sg2.cee.mitac.com/svn/sg2/trunk/SmartGPS2/pe30 ~/smartgpsv2/repos --username weiyi.li
-        svn checkout https://n476.cee.mitac.com/svn/n476/trunk/A6/ ~/a701/repos --username weiyi.li
-
-<!-- more -->
+        svn checkout /remote/url/ /local/path/ --username yourname
 
 - 本地版本库的当前状态，在 commit 前必须确保被更改的文件是需要提交的文件：
 
