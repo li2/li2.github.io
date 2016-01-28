@@ -37,12 +37,14 @@ gavatar:            /assets/img/avatar.png
 
 # google analytics 设置
 ga:
-  id: UA-54262064-1 
-  url: painterlin.com
+  id: UA-73010107-1
+  url: li2.me
 
 # disqus 设置
+# Set Up Disqus On a Your Own Site, this shortname is your unique Disqus URL.
+# something like this: shortname.disqus.com
 disqus:
-  shortname: li2
+  shortname: li2me
 
 
 # 主题设置，自动激活某个分类

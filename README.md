@@ -51,3 +51,14 @@
 ------
 
 weiyi.li 2016-01-25
+
+
+## Update2016-01-28
+特别强调： _config.yml 中必须要修改且特别易忽视的配置：
+
+- Disqus shortname 设置
+  你必须注册 disqus 账号，申请一个自己的 disqus 子域名（shortname.disqus.com），然后修改 _config.yml 中的 disqus:shortname 配置。这样，你才可以通过 disqus 账号管理自己网站的评论。
+
+- Google analyzing your site's traffic
+  你必须注册 google analytics 获取 Tracking ID，然后修改 _config.yml 中的 ga:id 和 ga:url.
+  > This property works using Universal Analytics. Click Get Tracking ID and implement the Universal Analytics tracking code snippet to complete your set up.
