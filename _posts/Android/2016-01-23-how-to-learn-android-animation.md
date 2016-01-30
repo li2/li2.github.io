@@ -49,11 +49,16 @@ tags: [android-animation]
 
 Topeka 是一个趣味问答应用，包含9个种类的问题，以网格布局呈现，点击某个格子进入回答问题的页面，一个问题回答完后就切换到下一个问题，有选择题填空题等各种类型的问题（对应各种UI组件）。包含了很多动画元素：
 
-- Transitions: 很棒的 Activities 转场动画（great transitions between Activities）；
+(1) Transitions: 很棒的 Activities 转场动画（great transitions between Activities）；
+
 ![transitioins](/assets/img/android/learn-android-animation-transitions.gif)
-- Animations: 答题时有精心编排的动画，一旦答题就弹出一个浮动操作按钮，点击按钮提交答案就进入了下一个问题，这时会根据回答正确与否播放对应的动画；
+
+(2) Animations: 答题时有精心编排的动画，一旦答题就弹出一个浮动操作按钮，点击按钮提交答案就进入了下一个问题，这时会根据回答正确与否播放对应的动画；
+
 ![complex animations](/assets/img/android/learn-android-animation-complex.gif)
-- Property Animations：为 circular reveal 增加颜色渐变的动画（从FAB的颜色变成透明）以营造出消融的效果（Adding a color animation from the FAB's color to transparent creates a dissolve like effect to the circular reveal）。（上上一个gif包含这种效果，但太快了看不出效果，下面这个gif延长了时间，为了突出动画）；
+
+(3) Property Animations：为 circular reveal 增加颜色渐变的动画（从FAB的颜色变成透明）以营造出消融的效果（Adding a color animation from the FAB's color to transparent creates a dissolve like effect to the circular reveal）。（上上一个gif包含这种效果，但太快了看不出效果，下面这个gif延长了时间，为了突出动画）；
+
 ![property animations](/assets/img/android/learn-android-animation-property.gif)
 
 
