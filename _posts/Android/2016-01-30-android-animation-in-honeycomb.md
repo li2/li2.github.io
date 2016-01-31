@@ -26,24 +26,20 @@ Honeycomb 之前，动画由 android.view.animation 实现，比如
 
 - 视图的移动 move、缩放 scale、旋转 rotate、渐变 fade；
 - 通过 `AnimationSet` 组合安排多个动画；
-- 把动画指定给 `LayoutAnimationController`，当容器排列子视图时，会自动错开所有子视图动画的开始时间；（文末有注释）
-- 使用 `Interpolator`（插值器，用来定义动画改变的速率），比如 AccelerateInterpolator 和 BounceInterpolator，使动画不再匀速改变，从而显得更自然。
+- 把动画指定给 `LayoutAnimationController`，当容器排列子视图时，会自动错开所有子视图动画的开始时间（**文末有注释**）；
+- 使用 `Interpolator`（插值器，用来定义动画改变的速率，**文末有注释**），比如 AccelerateInterpolator 和 BounceInterpolator，使动画不再匀速改变，从而显得更自然。
 
-如上述，honeycomb 之前可以实现**视图动画**，但也仅止于此，因为 honeycomb 之前动画只能操作视图对象（View Objects），缺乏一些关键功能的支持，对诸如 Drawable 的位置、背景色等这些视图属性无能为力。
+如上述，honeycomb 之前可以实现**视图动画**，但也仅止于此，因为 honeycomb 之前动画只能操作视图对象（View Objects），缺乏一些关键功能的支持，对诸如 Drawable 的位置、背景色等视图属性无能为力。
 
-之前的动画仅仅改变目标视图看起来的样子，而不会改变视图对象的属性。比如通过动画 TranslateAnimation 和 setFillAfter(true) 改变按钮的位置，动画仅仅在新的位置重绘按钮，而无法改变按钮在父视图中的位置。也就是说在新位置点击按钮无效。
+之前的动画仅仅改变目标视图的视觉效果（看起来的样子），而不会改变视图对象的属性。比如通过动画 TranslateAnimation 和 setFillAfter(true) 改变按钮的位置，动画仅仅在新的位置重绘按钮，而无法改变按钮在父视图中的位置。也就是说在新位置点击按钮无效。
 
-基于这些（还有其它没有提到的）原因，Honeycomb 提供了全新的动画机制，新机制建立于**属性动画（property animation）**的概念之上。
+基于上述（还有其它没有提到的）原因，Honeycomb 提供了全新的动画机制，新机制建立于**属性动画（property animation）**的概念之上。
 
 
 ## Honeycomb中的属性动画 ##
 
-新动画机制不仅仅针对视图对象，也不仅仅针对对象的某些属性，也不局限于视觉效果。事实上，它所有的一切都是关于一段时间后**值的变化**，并把这些变化的值设置给**任何**目标对象和对象属性。因此，你可以：
-
-- 移动或者渐变视图；
-- 移动视图内的 Drawable；
-- 动态地改变 Drawable 的背景色；
-- 动态地改变任何数据类型的值，只需要告诉新机制：动画时长、自定义类型的动画过程值的计算方法、动画的起止值。有了这些，新机制就可以计算动画过程值并设置给目标对象（或属性）。
+新动画机制不仅仅针对视图对象，也不仅仅针对对象的某些属性，也不局限于视觉效果。事实上，它所有的一切都是关于一段时间后**值的变化**，并把这些变化的值设置给**任何**目标对象和属性。
+因此你可以完成很多事情，诸如：移动或者渐变视图；移动视图内的 Drawable；动态地改变 Drawable 的背景色；甚至动态地改变任何数据类型的值，只需要告诉新机制：动画时长、自定义类型的动画过程值的计算方法、动画的起止值，新机制就可以计算动画过程值并设置给目标对象和属性。
 
 所以，通过新机制移动按钮是真的移动了按钮的位置。
 
@@ -52,7 +48,7 @@ Honeycomb 之前，动画由 android.view.animation 实现，比如
 
 ## Animator ##
 
-[`Animator`](http://developer.android.com/reference/android/animation/Animator.html) 是新动画机制中的超类。子类 `ValueAnimator` 是核心计时引擎，子类 `AnimatorSet` 用来把多个动画编排成一个动画。一般不会直接使用 `Animator`，但它的一些属性和方法为子类所共有，诸如持续时间duration、开始延迟startDelay、监听器listener.
+[`Animator`](http://developer.android.com/reference/android/animation/Animator.html) 是新动画机制中的超类。子类 `ValueAnimator` 是核心计时引擎，子类 `AnimatorSet` 用来把多个动画编排成一个动画。一般不会直接使用 Animator，但它的一些属性和方法为子类所共有，诸如持续时间duration、开始延迟startDelay、监听器listener.
 
 当你想在动画结束时执行一些操作，监听器就显得很重要了。为了监听动画的生命周期事件，需要实现接口 `AnimatorListener` 并注册给 animator。比如，
 
@@ -78,7 +74,7 @@ Honeycomb 之前，动画由 android.view.animation 实现，比如
 
 ## ValueAnimator ##
 
-`ValueAnimator` 是整个新机制的「主力」。它运行的内部计时循环（timing loop 文末有注释），使程序内的所有动画，在每次计时脉冲（timing pulse 文末有注释）发生时，根据当前的时间计算动画过程值，并设置给目标对象和属性。
+`ValueAnimator` 是整个新机制的「主力」。它运行的内部计时循环（timing loop **文末有注释**），使程序内的所有动画，在每次计时脉冲（timing pulse **文末有注释**）发生时，根据当前的时间计算动画过程值，并设置给目标对象和属性。
 
 它拥有的一些核心特性可以帮助它做到这一点：
 
@@ -87,7 +83,7 @@ Honeycomb 之前，动画由 android.view.animation 实现，比如
 - 当前动画过程值算出来后，回调注册给它的监听器（`AnimatorUpdateListener`）；
 - 拥有计算不同类型值的能力（`TypeEvaluator`）。
 
-属性动画包含两个步骤：计算动画过程值，然后把这些值设置给目标对象或者属性。`ObjectAnimator`（稍后讲） 直接继承自 ValueAnimator，由它实现属性动画较为容易。但以下几种情况使用 ValueAnimator 反而更方便：
+属性动画包含两个步骤：计算动画过程值，然后把这些值设置给目标对象和属性。`ObjectAnimator`（稍后讲） 直接继承自 ValueAnimator，由它实现属性动画较为容易。但以下几种情况使用 ValueAnimator 反而更方便：
 
 - 当对象没有提供某个属性的 setter 方法时；
 - 当你仅有一个动画，并想把动画过程值设置给多个属性时；
@@ -101,7 +97,7 @@ Honeycomb 之前，动画由 android.view.animation 实现，比如
     anim.start();
 ```
 
-如前述，**新的动画机制不局限于视觉效果，而所有的一切都是关于一段时间后值的变化**。那么通过什么方式才能知道动画是否发生了呢？——答案是监听器：实现一个监听器 AnimatorUpdateListener 并注册给 ValueAnimator 实例，就可以在每一个动画帧（animation frame 文末有注释）被回调到，从而获取当前的动画值：
+如上述，**新的动画机制不局限于视觉效果，而所有的一切都是关于一段时间后值的变化**。那么通过什么方式才能知道动画是否发生了呢？——答案是监听器：实现一个监听器 AnimatorUpdateListener 并注册给 ValueAnimator 实例，就可以在每一个动画帧（animation frame **文末有注释**）被回调到，从而获取当前的动画值：
 
 ```java
     anim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -127,7 +123,7 @@ XML 文件也可以实现相同的动画：
         android:valueType="intType"/>
 ```
 
-新机制知道如何计算整数和浮点数的动画过程值，这是因为其内置了相关的计算方法。而对于其它类型的数据，比如 Point, Rect, 甚至自定义数据，新机制不知如何计算，但通过 TypeEvaluator（稍后解释），倒手就把计算动画过程值的责任交给了你：
+新机制知道如何计算整数和浮点数的动画过程值，这是因为其内置了相关的计算方法。而对于其它类型的数据，比如 Point, Rect, 甚至自定义数据，新机制不知如何计算，但通过 TypeEvaluator（稍后讲），转手就把计算动画过程值的责任交给了你：
 
 ```java
     Point p0 = new Point(0, 0);
@@ -183,13 +179,59 @@ XML 文件也可以定义相同的动画：
 
 ## View properties ##
 
+敏锐的读者可能已经发现了新动画机制的瑕疵：围绕属性做文章的新机制，如何处理那些连一个 public set/get 属性方法都没有的视图对象呢？
+好问题！继续读下去。
 
+类 `View` 在 Honeycomb 中得到了升级，增添了很多新属性，可以通过 set/get 方法访问这些属性，使得新动画机制可以应用于视图对象：
+
+- translationX 和 translationY：
+- rotation, rotationX, 和 rotationY：
+- scaleX 和 scaleY：
+- pivotX 和 pivotY：
+- x 和 y：
+- alpha：
 
 
 ## AnimatorSet ##
 
+`AnimatorSet` 用来把多个动画编排成一个动画（作用类似于3.0以前的 AnimationSet）。比如你想编排一个这样的动画：先渐隐一个视图，结束后从侧边滑入另一个视图，滑入的同时渐显出来。为了实现这样的编排，首先需要拆分成几个独立的动画，接下来就有好几种选择了：在正确的时间手动播放对应的动画，或者给每个动画设置合适的播放延迟，总之你需要显示地、主动地设置合适的时间；如果觉得时间不好掌控，或者嫌麻烦，就使用 AnimatorSet，它提供的 APIs 使这些变得很简单：
+
+- 同时播放：playTogether(Animator...);
+- 顺序播放：playSequentially(Animator...);
+- 通过 `AnimatorSet.Builder` 设置动画间的相对关系：with(), before(), after();
+- play(Animator) 会创建一个 Builder;
+
+因此上述动画可以这样实现：
+
+```java
+    ObjectAnimator fadeOut = ObjectAnimator.ofFloat(v1, "alpha", 0f);
+    ObjectAnimator mover = ObjectAnimator.ofFloat(v2, "translationX", -500f, 0f);
+    ObjectAnimator fadeIn = ObjectAnimator.ofFloat(v2, "alpha", 0f, 1f);
+    AnimatorSet animSet = new AnimatorSet().play(mover).with(fadeIn).after(fadeOut);;
+    animSet.start();
+```
+也可以在 XML 文件中实现上述动画。
+
 
 ## TypeEvaluator ##
+
+上述 ValueAnimator 一节有说过一段话：
+新机制知道如何计算整数和浮点数的动画过程值，这是因为其内置了相关的计算方法。而对于其它类型的数据，比如 Point, Rect, 甚至自定义数据，新机制不知如何计算，但通过 TypeEvaluator，转手就把计算动画过程值的责任交给了你。
+
+先看一下内置的方法是如何计算浮点数的动画过程值的：
+
+```java
+    public class FloatEvaluator implements TypeEvaluator {
+        public Object evaluate(float fraction, Object startValue, Object endValue) {
+            float startFloat = ((Number) startValue).floatValue();
+            return startFloat + fraction * (((Number) endValue).floatValue() - startFloat);
+        }
+    }
+```
+
+
+
+
 
 
 ## BUT WAIT, THERE'S MORE! ##
@@ -220,11 +262,24 @@ XML 文件也可以定义相同的动画：
 ### 关于 animated values
 动画过程值，动画中间值。
 
-由于属性动画的本质是「值的变化」，所以当指定一个动画的起、止值时，在每一个动画帧，动画就会根据相应的计算方法算出一个值，这些值就是「animated values」。
+由于属性动画的本质是「值的变化」，所以当指定一个动画的起、止值时，在每一个动画帧，动画就会根据相应的插值器计算出一个值，这些值就是「animated values」。
 
 
-### 关于 interpolator
-插值器，按照某种算法，把一个值映射为另一个值。
+### 关于 Interpolator
+插值器：把处于某个区间（有起点值和终点值）的一个值，按照某种算法，映射为另一个值。
+
+A time interpolator defines the rate of change of an animation. This allows animations to have non-linear motion, such as acceleration and deceleration.
+
+Maps a value representing the elapsed fraction of an animation to a value that represents the interpolated fraction. This interpolated value is then multiplied by the change in value of an animation to derive the animated value at the current elapsed animation time.
+
+
+
+TODO TypeEvaluator 和 Interpolator 区别？
+TODO TypeEvaluator 不仅包含 Float 和 Int
+
+Known Indirect Subclasses
+ArgbEvaluator, FloatArrayEvaluator, FloatEvaluator, IntArrayEvaluator, IntEvaluator, PointFEvaluator, RectEvaluator
+
 
 public interface TimeInterpolator {}
 public interface Interpolator extends TimeInterpolator {}
@@ -259,6 +314,8 @@ interpolation
 ～theory 插值理论
 - 来源：英汉科技大词库·第二卷 E-M
 
+### 关于 TypeEvaluator
+
 
 ### 关于 staggered animation
 automatically staggered animation start times：自动错开动画的开始时间。
@@ -269,7 +326,9 @@ staggered adj. 错列的；吃惊的。 [`LayoutAnimationController`](http://dev
 ### 其它一些单词和词组
 
 usher in 领进，引进。
-
+choreograph 设计舞蹈动作；为...编舞。
+choreograph multiple animations 为动画编舞；把多个动画优雅地编排成一个。
+play with the API demos TODO
 
 ## 一个哲学问题 ##
 
