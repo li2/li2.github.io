@@ -34,7 +34,7 @@ public interface TimeInterpolator {
 }
 ```
 
-从注释来看，它的作用是「定义动画改变的速率，使得动画不一定要匀速改变，可以加速、减速。」
+从注释来看，它的作用是**「定义动画改变的速率，使得动画不一定要匀速改变，可以加速、减速。」**
 真实世界不总是匀速运转的，如果我们针对不同的场景采用合适的插值器，动画的表现会自然好看，从而为 App 增添色彩 ( ˇˍˇ )
 
 问题是，插值器是怎么办到的？继续看注释。
@@ -102,7 +102,7 @@ AccelerateDecelerateInterpolator, AccelerateInterpolator, AnticipateInterpolator
 ### [AccelerateDecelerateInterpolator](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/view/animation/AccelerateDecelerateInterpolator.java)
 
 这是默认的插值器，如果 setInterpolator(null) 则是线性插值器。（[查阅API说明](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/animation/ValueAnimator.java#ValueAnimator.setInterpolator)）
-它的行为：开始和结尾减速、中间加速。（PS：和绳命的轨迹相似（绳命的幼年和老年、绳命的青年），这是成为默认插值器的理由，一个猜测，可能是对的。）
+它的行为：开始和结尾减速、中间加速。（PS：和绳命的轨迹相似（绳命的幼年和老年、绳命的青年），这是成为默认插值器的理由，一个猜想，可能是对的。）
 它的插值方法：
 
 ```java
@@ -120,7 +120,7 @@ AccelerateDecelerateInterpolator, AccelerateInterpolator, AnticipateInterpolator
 
 ### [CycleInterpolator](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/view/animation/CycleInterpolator.java)
 
-它的插值方法：
+CycleInterpolator 的插值方法：
 
 ```java
     public float getInterpolation(float input) {
@@ -128,23 +128,35 @@ AccelerateDecelerateInterpolator, AccelerateInterpolator, AnticipateInterpolator
     }
 ```
 
-插值方法对应的图形：
+CycleInterpolator mCycles=1 时的图形：
 
 ![CycleInterpolator](/assets/img/android/android-animation-CycleInterpolator.png)
 
-
+被篡改后的播放进度为**负数**是怎么回事？需要回到 getInterpolation(float) 方法，查看它对返回值的解释：
 
 > @return The interpolation value. This value can be more than 1.0 for
 >         interpolators which overshoot their targets, or less than 0 for
 >         interpolators that undershoot their targets.
 
+[0, 1.0] 是未被篡改前的动画播放进度范围（即入口参数的范围），至于被篡改后的值，**超过 1 被称为「过冲」，小于 0 被称为「下冲」**。
+过冲和下冲目前我理解的也不是很清楚（TODO），所以还是看 GIF 图吧：
+
+CycleInterpolator 的 GIF 效果图：
+
 ![CycleInterpolator](/assets/img/android/android-animation-CycleInterpolator.gif)
 
 
-## 
+### 从 ApiDemos 观察插值器的实际运行效果
 
-## 附录 interpolation
-搜索自 CNKI 词典：
+**这里只列出了两个插值器，还有很多很多，理解这些插值器的最好办法是观看它们的运行效果，修改参数再次观看运行效果。** ApiDemos 包含这样的代码：ApiDemos/app/src/main/java/com/example/android/apis/view/Animation3.java
+
+![interpolator](/assets/img/android/android-animation-interpolator-list.png)
+
+
+## 附录
+
+### interpolation 搜索自 CNKI 词典：
+
 ①插值法,内插法,内推法,插入法②插入,插入物③窜改
 ～by central difference 中差插值法
 ～by continued fractions 用连分式的插值法
@@ -170,10 +182,32 @@ AccelerateDecelerateInterpolator, AccelerateInterpolator, AnticipateInterpolator
 ～theory 插值理论
 - 来源：英汉科技大词库·第二卷 E-M
 
+### Google graph
+
+![google graph demo](/assets/img/util/google-graph-demo.png)
+
+更多用法请查阅知乎问题 [如何高效地使用搜索引擎？](https://www.zhihu.com/question/28013848)
+
+### 相关博文
+
+[https://m.oschina.net/blog/137391](https://m.oschina.net/blog/137391)
+[http://blog.kainaodong.com/?p=42](http://blog.kainaodong.com/?p=42)
+[http://www.cnblogs.com/mengdd/p/3346003.html](http://www.cnblogs.com/mengdd/p/3346003.html)
+
+
+### 张大锤「Interpolator」语录
+
+当代生活太慢了！必须提速了！纵身一跃！旁友们，以光速投身在星辰大海，必须让灵魂数位化了！生活太缓慢简直是犯罪，你今天洗了几个碗。2014-03-29
+
+人，不要闹腾，躺着最好。存在的真谛是慢，让生活慢下来。和乌龟学习！（三姨夫生活感悟 2014-07-26
+
+历法完全是个骗局，纯粹是统治阶级为了mindfuck人们的工具，个体对时间流逝的感知不同，怎么能一样算呢，比如老张时间过的慢，今年只有20岁，但按公历算已经45了，不公平！小刘12岁按公历算已经32了，这样男的放进学校能放心吗？建议取消历法，让生活模糊起来！就分以前和以后，保持时间的连续性 2015-11-19
+
+星期日下午三点半，你突然决定从此刻起比别人慢一秒，太棒了！在所有精确的严丝合缝的必须的不容置疑的社会主义生活方式中猛的后撤，过一种慢一步的生活，你成功了，一些不知所措在你上方集中，你陌生化成功了，生活第一次输了 2016-01-17
 
 ------
 
 by
 weiyi.li li2.me weiyi.just2@gmail.com
-2016-01-28
+2016-01-31 ~ 2016-02-01
 禁止转载
