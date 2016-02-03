@@ -48,12 +48,12 @@ disqus:
 
 
 # 主题设置，自动激活某个分类
-active: android
+active: Android
 
 
 # 首页除了最新文章外显示分类
 cates: 
-  - android
+  - Android
   - 工具
 
 
