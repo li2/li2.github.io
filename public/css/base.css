@@ -136,3 +136,12 @@ blockquote p {
   width: 100%;
   margin-bottom: 40px;
 }
+
+
+/* To limit image width, usage: ![book-cover](url) */
+img[alt="book-cover"] {
+  max-width: 256px;
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+}

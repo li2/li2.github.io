@@ -53,7 +53,7 @@
 weiyi.li 2016-01-25
 
 
-## Update2016-01-28
+## Update 2016-01-28
 特别强调： _config.yml 中必须要修改且特别易忽视的配置：
 
 - Disqus shortname 设置
@@ -62,3 +62,17 @@ weiyi.li 2016-01-25
 - Google analyzing your site's traffic
   你必须注册 google analytics 获取 Tracking ID，然后修改 _config.yml 中的 ga:id 和 ga:url.
   > This property works using Universal Analytics. Click Get Tracking ID and implement the Universal Analytics tracking code snippet to complete your set up.
+
+
+## Update 2016-02-05
+限制 markdown 文本中图片文件的大小：
+
+```css
+/* To limit image width, usage: ![book-cover](url) */
+img[alt="book-cover"] {
+  max-width: 256px;
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+}
+```
