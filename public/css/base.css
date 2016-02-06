@@ -83,7 +83,7 @@ body, html {
       background: #F5F5F5; }
   @media screen and (max-width: 585px) {
     .aside2 {
-        font-size: 15px;
+        font-size: 14px;
         top: 50px; }
 }
 
@@ -112,16 +112,16 @@ body, html {
 */  
   padding: 0 5% 0 5%;
   color: #656565;
-  line-height: 1.42857143;
+  line-height: 1.6;
 }
 #content {
-  font-size: 18px;
+  font-size: 14px;
 }
 #content h2, h3 {
   line-height: 2;
 }
 blockquote p {
-  font-size: 20px;
+  font-size: 14px;
 }
 /* 其他配置 */
 .center {
