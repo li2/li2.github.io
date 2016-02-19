@@ -9,11 +9,11 @@ tags: []
 
 无奈之下只好先注销 chrome 的当前账号，用新的账号登陆，事情发生了转机，看：
 
-![image](/assets/img/util/merge-chrome-info-with-another-account-1.png)
+![image](/assets/img/util/merge-chrome-info-from-another-account-1.png)
 
 所以，只要点击「Sign in anyway」就能把 chrome 数据同步到新账号中了。
 
-![image](/assets/img/util/merge-chrome-info-with-another-account-2.png)
+![image](/assets/img/util/merge-chrome-info-from-another-account-2.png)
 
 
 li2，2016年02月19日，沪北。
