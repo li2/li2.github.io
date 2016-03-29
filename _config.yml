@@ -96,9 +96,14 @@ future:      true
 # 
 # 其它可选的markdown: rdiscount, kramdown, 
 #
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "quote", "highlight", "tables", "footnotes", "hard_wrap"]
+
+markdown: kramdown
+
+# https://github.com/planetjekyll/quickrefs/blob/master/FAQ.md#q-how-can-i-get-backtick-fenced-code-blocks-eg--working-with-kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
 highlighter: pygments
     
 
