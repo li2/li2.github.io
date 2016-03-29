@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 如何使用 SpannableString 格式化字符串，诸如前景色、下划线、超链接、图文混排等？
+title: 使用 SpannableString 格式化字符串，实现前景色、下划线、超链接、图文混排等
 category: Android
 tags: [android-view]
 ---
@@ -16,6 +16,8 @@ SpannableStringBuilder 有一个方法 `setSpan (Object what, int start, int end
 - `StyleSpan` 粗体、斜体等样式；
 - `UnderlineSpan` 添加下划线；
 - `StrikethroughSpan` 添加删除线；
+- `SuperscriptSpan` 上标；
+- `SubscriptSpan` 下标；
 - `ClickableSpan` 添加 URL 超链接样式；
 - `ImageSpan` 添加图片到字符串，实现图文混排（How to add image to text in TextView）；
 - 这些 span 继承（或间接继承)自 [CharacterStyle](http://developer.android.com/reference/android/text/style/CharacterStyle.html)。
