@@ -14,11 +14,11 @@ If you use [jfeinstein10/SlidingMenu](https://github.com/jfeinstein10/SlidingMen
 Refer to [How to Integrate this Library into Your Projects](https://github.com/jfeinstein10/SlidingMenu#how-to-integrate-this-library-into-your-projects):
 
 > You can wrap your Activities in a SlidingMenu by constructing it programmatically (
-
+>
 >`menu = new SlidingMenu(Context context)`) and then calling
-
+>
 > `menu.attachToActivity(Activity activity, SlidingMenu.SLIDING_WINDOW | SlidingMenu.SLIDING_CONTENT)`.
-
+>
 > `SLIDING_WINDOW` will include the Title/ActionBar in the content section of the SlidingMenu, while
 > `SLIDING_CONTENT` does not. 
 > You can check it out in the example app **AttachExample Activity**.
@@ -26,8 +26,6 @@ Refer to [How to Integrate this Library into Your Projects](https://github.com/j
 ## step2. Then implement a `SampleListFragment` which represent your menu, and add to your activity.
 
 define a fragment container layout `fragment_menu.xml`:
-
-<!-- more -->
 
 ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -38,7 +36,6 @@ define a fragment container layout `fragment_menu.xml`:
 ```
 
 call `menu.setMenu(R.layout.fragment_menu);` **to add the fragment container view to your activity**,
-
 Lastly, **add your `SampleListFragment` to your activity's fragment manager**:
 
 ```java

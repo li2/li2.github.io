@@ -56,6 +56,7 @@ startService(intent);
 由于 HandlerThread 消息队列的特性，只能逐个处理收到的 intent，而 handler 每处理完一个 intent，都会调用 `stopSelf(int)`，为什么处理完队列的最后一个 intent 时，`IntentService.onDestroy()` 才被调到？应该是内部会做判断，并未继续追踪代码以了解其判断细节。
 
 IntentService 的 Class OverView 就是这样描述的：
+
 > IntentService is a base class for Services that handle asynchronous requests (expressed as Intents) on demand. Clients send requests through startService(Intent) calls; the service is started as needed, handles each Intent in turn using a worker thread, and stops itself when it runs out of work.
 
 如果不熟悉消息循环，可以参阅 [Android_Message_Handler_消息处理机制总结笔记](http://segmentfault.com/a/1190000003862319)
@@ -179,6 +180,7 @@ D/Service: onDestroy()                  // 所有client解除绑定后，系统�
 所以当 client 解除与 service 的绑定并销毁自己时，最好在自己的生命周期方法内清理与 service 有关的资源。
 
 特别需要注意的是，不要在 `onResume()` 和 `onPause()` 生命周期方法内 bind/unbind service。比如，从 activity1 跳转到 activity2，service 和 activity1 解除了绑定，但 activity2  还未来得及绑定 service，将导致没有任何 client 与 service 绑定，service 会被销毁。
+
 > Note: You should usually not bind and unbind during your activity's onResume() and onPause()...
 
 ## 创建前台服务
@@ -191,11 +193,10 @@ D/Service: onDestroy()                  // 所有client解除绑定后，系统�
 ## Service 和 Thread 的关系
 
 Service运行于 UI 线程，所以如果有耗时的操作，需要在 service 中创建工作线程来完成。
+
 > Caution: A service runs in the main thread of its hosting process—the service does not create its own thread and does not run in a separate process (unless you specify otherwise).
 
-## 使用 Bound Service 完成后台下载任务的 Demo
-
-http://segmentfault.com/q/1010000004001588
+## [使用 Bound Service 完成后台下载任务的 Demo](http://segmentfault.com/q/1010000004001588)
 
 
 ## 参考

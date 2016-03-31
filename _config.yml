@@ -93,19 +93,29 @@ future:      true
 # 
 # 表格语法需要特别注意 :-: 中间若有空格，可能不会解析。
 # no_intra_emphasis: do not parse emphasis inside of words 不解析单词间的下划线
-# hard_wrap: newlines
 # 
 # 其它可选的markdown: rdiscount, kramdown, 
 #
+# Github 不再支持 redcarpet， 替换为 kramdown
+# https://github.com/planetjekyll/quickrefs/blob/master/FAQ.md#q-how-can-i-get-backtick-fenced-code-blocks-eg--working-with-kramdown
+#
+# Should the markdown renderer treat a single line break as <br>?
+# http://meta.stackexchange.com/questions/26011/should-the-markdown-renderer-treat-a-single-line-break-as-br
+#
+# Markdown 需要敲两次回车才能产生一个新的段落。
+# 仅仅一个回车不会被解释为换行，如果想换行，需要在行尾「敲两个空格然后回车」，或者在行尾加标签 <br>，或者设置 hard_wrap 为 true
+#
+# http://kramdown.gettalong.org/rdoc/Kramdown/Options.html
+# hard_wrap=true  Interprets line breaks literally
 
 markdown: kramdown
-
-# https://github.com/planetjekyll/quickrefs/blob/master/FAQ.md#q-how-can-i-get-backtick-fenced-code-blocks-eg--working-with-kramdown
 kramdown:
   input: GFM
-  hard_wrap: false
+  hard_wrap: true
 
-highlighter: pygments
+# Fixing highlighting errors: pygments not supported.
+
+highlighter: rouge
     
 
 # Analytics and webmaster tools stuff goes here

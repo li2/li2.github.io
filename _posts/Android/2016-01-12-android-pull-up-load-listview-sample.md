@@ -7,12 +7,11 @@ tags: [android-listview]
 
 ## ListView上拉加载更多的UI需求
 
-（1）向上滑动 ListView，当最后一个条目滚入屏幕时开始加载更多条目，在列表底部增加一个 footerView：一个 infinite progressBar，一个 textView 显示 “Loading...”；
-（2）根据数据加载的结果更新 view：
-（2.1）如果已经没有更多条目，则更新 footerView：仅包含一个 textView 显示“No More”；
-（2.2）如果成功获取更多条目，则更新 ListView，同时移除（隐藏） footerView；
-（2.3）如果加载失败（网络异常等原因），移除（隐藏） footerView。
-
+1. 向上滑动 ListView，当最后一个条目滚入屏幕时开始加载更多条目，在列表底部增加一个 footerView：一个 infinite progressBar，一个 textView 显示 “Loading...”；
+2. 根据数据加载的结果更新 view
+    - 如果已经没有更多条目，则更新 footerView：仅包含一个 textView 显示“No More”；
+    - 如果成功获取更多条目，则更新 ListView，同时移除（隐藏） footerView；
+    - 如果加载失败（网络异常等原因），移除（隐藏） footerView。
 
 综上述，需要有一个 footerView，它包含两种状态：
 
@@ -163,24 +162,23 @@ adapter.addMoreItems(newItems);
 
 上述实现基于 [nicolasjafelle/PagingListView](https://github.com/nicolasjafelle/PagingListView)，对 [PagingListView.java](https://github.com/nicolasjafelle/PagingListView/blob/master/PagingListViewProject/PagingListView/src/main/java/com/paging/listview/PagingListView.java) 做了两处较大改动：
 
-（1）数据加载完成后，由PagingListView负责更新adapter，**考虑到ListView可能并不清楚adapter的接口，所以还是交给activity比较好**；
+1. 数据加载完成后，由PagingListView负责更新adapter，**考虑到ListView可能并不清楚adapter的接口，所以还是交给activity比较好**；
 
-```java
-// PagingListView的实现
-public void onFinishLoading(boolean hasMoreItems, List<? extends Object> {
-    ...
-    ((PagingBaseAdapter) adapter).addMoreItems(newItems);
-}
-```
-
-（2）PagingListView维护了一个私有成员`boolean hasMoreItems`，然后在滚动事件回调`onScroll(...)`中，如果该值为false，就不会加载更多数据。
+        // PagingListView的实现
+        public void onFinishLoading(boolean hasMoreItems, List<? extends Object> {
+            ...
+            ((PagingBaseAdapter) adapter).addMoreItems(newItems);
+        }
+	
+2. PagingListView维护了一个私有成员`boolean hasMoreItems`，然后在滚动事件回调`onScroll(...)`中，如果该值为false，就不会加载更多数据。
 
 我觉得不应该由ListView来维护『是否具有更多的item』，这样会带来一些困惑和额外的工作。比如该值为false的情况下，当外部清空list item后，必须重置 `hasMoreItems`，否则无法继续加载。
 
 
 **这样逻辑显得比较乱，而『是否可以加载更多』，应该分成两部分：**
-由 ListView 判断『没有处于加载状态』并且『已经滚到了最后一个条目』则允许加载；
-由 Activity 判断『还有更多的数据』则允许加载。
+
+- 由 ListView 判断『没有处于加载状态』并且『已经滚到了最后一个条目』则允许加载；
+- 由 Activity 判断『还有更多的数据』则允许加载。
 
 这样就显得清晰很多了。
 

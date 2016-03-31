@@ -30,8 +30,9 @@ gistbox使管理、添加、使用gist（代码段）变得肥肠容易（前提
 ------
 
 - 官方说明：[GitHub - About gists](About gists - User Documentation)
-> Gists are a great way to share your work. You can share single files, parts of files, or full applications. You can access gists at https://gist.github.com.
-> Every gist is a Git repository, which means that it can be forked, cloned, and manipulated in every way.
+
+    > Gists are a great way to share your work. You can share single files, parts of files, or full applications. You can access gists at https://gist.github.com.
+    > Every gist is a Git repository, which means that it can be forked, cloned, and manipulated in every way.
 
 - [GixBox 官网](GistBox - The Beautiful Way to Organize Code Snippets)
 - [Here's a quick tutorial on how to save code snippets with the extension](GistBox - The Beautiful Way to Organize Code Snippets)

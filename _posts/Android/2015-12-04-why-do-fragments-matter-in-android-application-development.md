@@ -90,13 +90,9 @@ public class MainFragment extends Fragment {
 > The beauty of fragments here is that we do not have to modify either of these Fragment classes for this to happen. Fragments are reusable components of our application that can be presented to the user in any number of ways.
 
 我刚刚讲过，Honeycomb 发布时引入了 fragments。Honeycomb 版本首次对平板设备提供了正式支持。fragment 理念的最初目标之一是帮助开发者在构建手机和平板应用时提供不同的用户体验。
-
 邮件客户端是用到 fragment 的典型例子，比如 Gmail App。手机版展示了用户的邮件列表，点击其中一个就跳转到展示邮件内容的详情界面。这个过程包含了两个界面，各自独占屏幕。
-
 当用户在平板上使用 Gmail App 时，可以在一个屏幕上同时看到列表界面和详情界面。显然我们可以在平板上一次显示更多的信息。
-
 Fragments 很容易实现这个功能。列表界面是一个 fragment，详情界面也是一个 fragment。activity 根据屏幕大小决定显示其中一个或全部。
-
 Fragments 的优雅之处在于，不需要修改 fragment 类的代码就可以完成上述事情。作为 app 的可重用组件，fragments 可以以任意多种方式呈现给用户。
 
 ![Figure 1 Fragments in use on a tablet](/assets/img/android/Fragments_in_use_on_a_tablet.png)
@@ -130,6 +126,7 @@ ViewPager 瞄准了 fragments 的一个核心理念。一旦你的特定的应�
 你可以把 fragment 当作一个『设计更合理』的 activity。Fragments 的生命周期允许它做一些 activity 做不到的事情：它分开了实例的创建和视图的创建。
 
 译注：作者是指 Fragment 具有 `onCreate(...)`, `onCreateView(...)`, `onDestroyView()` 等生命周期方法，这些方法使得 fragment 拥有了分开创建实例和视图、以及保存实例而仅销毁视图的能力。而 Activity 的 `onCreateView(...)` 并不是生命周期回调方法。
+
 > `onCreate(Bundle)` called to do initial creation of the fragment.
 > `onCreateView(LayoutInflater, ViewGroup, Bundle)` creates and returns the view hierarchy associated with the fragment.
 > `onDestroyView()` allows the fragment to clean up resources associated with its View.
@@ -165,8 +162,8 @@ ViewPager 瞄准了 fragments 的一个核心理念。一旦你的特定的应�
 
 译后：安利我自己的几篇关于 Fragment 的总结笔记：
 
-- [如何使用 Android UI Fragment 开发“列表-详情”界面？](http://segmentfault.com/a/1190000003692217)
-- [如何更新及替换 ViewPager 中的 Fragment？](http://segmentfault.com/a/1190000003742057)
-- [如何在 Android 设备旋转时暂存数据以保护当前的交互状态？](http://segmentfault.com/a/1190000003965285)
+- [如何使用 Android UI Fragment 开发“列表-详情”界面？](http://li2.me/2015/09/how-to-develop-list-detail-ui-with-fragments.html)
+- [如何更新及替换 ViewPager 中的 Fragment？](http://li2.me/2015/09/how-to-update-replace-fragment-in-viewpager.html)
+- [如何在 Android 设备旋转时暂存数据以保护当前的交互状态？](http://li2.me/2015/11/handling-android-runtime-changes.html)
 
 来来来 让我们一起涌抱Fragment 一起high

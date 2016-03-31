@@ -315,12 +315,14 @@ public class ThumbnailDownloader<Token> extends HandlerThread {
 因为作者着重讲解app的实现思路，对涉及到的类只给出了结论，没有说明为什么。所以初学时很费解，实际编程时也是只知其然不知其所以然。后来读了些博文（下面给出了链接），又阅读了源码，总算厘清了这些类，而这篇文章就是我理解后的一个产物。
 
 下面是3个作者的4篇博文，总结的都很棒，侧重于源码分析。尤其是第2篇，作者最后画了一张图，通过传送带来解释涉及到的类和概念：“在现实生活的生产生活中，存在着各种各样的传送带，传送带上面洒满了各种货物，传送带在发动机滚轮的带动下一直在向前滚动，不断有新的货物放置在传送带的一端，货物在传送带的带动下送到另一端进行收集处理。”
+
 - [Android中Handler的使用 - iSpring的CSDN博客](http://blog.csdn.net/iispring/article/details/47115879)
 - [深入源码解析Android中的Handler,Message,MessageQueue,Looper - iSpring的CSDN博客](http://blog.csdn.net/iispring/article/details/47180325)
 - [android的消息处理机制（图+源码分析）——Looper,Handler,Message - CodingMyWorld的cnblog](http://www.cnblogs.com/codingmyworld/archive/2011/09/14/2174255.html)
 - [Android异步消息处理机制完全解析，带你从源码的角度彻底理解 - 郭霖的CSDN专栏](http://blog.csdn.net/guolin_blog/article/details/9991569)
 
 下面就是源码链接了，对于理解android的消息处理机制非常有帮助。
+
 - [Handler源码链接](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/os/Handler.java)
 - [HandlerThread源码链接](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/os/HandlerThread.java)
 - [Message源码链接](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/os/Message.java)

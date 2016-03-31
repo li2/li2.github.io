@@ -34,8 +34,6 @@ if(1.905669,2.0353742) you(2.0353742,2.1650794) really(2.1650794,2.4444444) want
 
 **而我希望做一个具有这样功能的android app，播放自己喜欢的英文小说，练习听力。**
 
-<!-- more -->
-
 
 ## 如何使用Long Audio Aligner
 
@@ -92,6 +90,7 @@ at edu.cmu.sphinx.decoder.search.AlignerSearchManager.collectSuccessorTokens(Ali
 ```
 
 这两个问题应该都和音频格式有关。音频编辑软件**audacity**可以导出音频为不同的格式，经过对比测试时发现，在导出对话框的format选项中，选择**“其它非压缩音频文件：文件头WAV(Microsoft), 编码Unsigned 8 bit PCM”**，这种音频格式能够得到最佳的结果。
+
 ![export_as_wav_unsigned8bit.png](/assets/img/android/export_as_wav_unsigned8bit.png)
 
 所以我在demo文件夹里上传了两种格式的音频文件，用以对比。
@@ -324,29 +323,32 @@ public class ChapterPageAdapter extends FragmentPagerAdapter {
 ```
 
 ### 关于章节列表对应的类的说明 TODO
+
 ### 关于播放器的说明 TODO
 
 
 ## 用到的开源软件
 
 - android-UniversalMusicPlayer
-这是一个开源的android音乐播放器，[它的项目主页](https://github.com/googlesamples/android-UniversalMusicPlayer)
-我的播放器代码很多直接拿了它的一个文件 [FullScreenPlayerActivity.java 点击查看](https://github.com/googlesamples/android-UniversalMusicPlayer/blob/master/mobile/src/main/java/com/example/android/uamp/ui/FullScreenPlayerActivity.java)
+    这是一个开源的android音乐播放器，[它的项目主页](https://github.com/googlesamples/android-UniversalMusicPlayer)
+    我的播放器代码很多直接拿了它的一个文件 [FullScreenPlayerActivity.java 点击查看](https://github.com/googlesamples/android-UniversalMusicPlayer/blob/master/mobile/src/main/java/com/example/android/uamp/ui/FullScreenPlayerActivity.java)
 
 - ViewPagerIndicator
-这是一个开源的Android UI，用以标示ViewPager的页，就是常见的几个小圆点。
-[它的项目主页](https://github.com/JakeWharton/ViewPagerIndicator)
+    这是一个开源的Android UI，用以标示ViewPager的页，就是常见的几个小圆点。
+    [它的项目主页](https://github.com/JakeWharton/ViewPagerIndicator)
 
 - audiosync
-这个就是音频文本同步的开源命令行工具。[它的项目主页](https://github.com/johndyer/audiosync)。
-但是呢，它包含上百兆的音频文件，在时好时坏的国外网站访问现实下，有时只有几kb的下载速度，我就folk它然后删掉它的音频文件。这样子。
+    这个就是音频文本同步的开源命令行工具。[它的项目主页](https://github.com/johndyer/audiosync)。
+    但是呢，它包含上百兆的音频文件，在时好时坏的国外网站访问现实下，有时只有几kb的下载速度，我就folk它然后删掉它的音频文件。这样子。
 
 
 ## 去哪下载
 
 2015年08月21日完成了1.0版本，App名字叫**TalkingBook21**（因为我叫li21嘛），[你可以在这里下载App](http://pan.baidu.com/s/1kT3rI1h)，
 呐，它是这个样子的：
+
 ![demo gif](/assets/img/android/TalkingBook21_demo.gif)
+
 ![demo png](/assets/img/android/TalkingBook21_demo.png)
 
 由于音频文件很大，所以只在app里包了一个音频，权当是个demo。

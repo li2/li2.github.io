@@ -24,16 +24,20 @@ ViewPager某种程度上类似于ListView，区别在于：ListView通过`ArrayA
 
 **声明：本文内容针对android.support.v4.app.***
 ViewPager有两个adapter：FragmentPagerAdapter和FragmentStatePagerAdapter：
-- [android.support.v4.app.FragmentPagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentPagerAdapter.java#FragmentPagerAdapter) 
-> 继承自android.support.v4.view.PagerAdapter，每页都是一个Fragment，并且所有的Fragment实例一直保存在Fragment manager中。所以它适用于少量固定的fragment，比如一组用于分页显示的标签。除了当Fragment不可见时，它的视图层（view hierarchy）有可能被销毁外，每页的Fragment都会被保存在内存中。（翻译自代码文件的注释部分）
+
+- [android.support.v4.app.FragmentPagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentPagerAdapter.java#FragmentPagerAdapter)
+
+    > 继承自android.support.v4.view.PagerAdapter，每页都是一个Fragment，并且所有的Fragment实例一直保存在Fragment manager中。所以它适用于少量固定的fragment，比如一组用于分页显示的标签。除了当Fragment不可见时，它的视图层（view hierarchy）有可能被销毁外，每页的Fragment都会被保存在内存中。（翻译自代码文件的注释部分）
+    
 - [android.support.v4.app.FragmentStatePagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentStatePagerAdapter.java#FragmentStatePagerAdapter)
-> 继承自android.support.v4.view.PagerAdapter，每页都是一个Fragment，当Fragment不被需要时（比如不可见），整个Fragment都会被销毁，除了saved state被保存外（保存下来的bundle用于恢复Fragment实例）。所以它适用于很多页的情况。（翻译自代码文件的注释部分）
+
+    > 继承自android.support.v4.view.PagerAdapter，每页都是一个Fragment，当Fragment不被需要时（比如不可见），整个Fragment都会被销毁，除了saved state被保存外（保存下来的bundle用于恢复Fragment实例）。所以它适用于很多页的情况。（翻译自代码文件的注释部分）
+
 
 它俩的子类，需要实现`getItem(int)` 和 `android.support.v4.view.PagerAdapter.getCount()`.
 
-## 先通过一段代码了解ViewPager和FragmentPagerAdapter的典型用法
 
-<!-- more -->
+## 先通过一段代码了解ViewPager和FragmentPagerAdapter的典型用法
 
 稍后做详细分析：
 
@@ -89,9 +93,11 @@ FragmentPagerAdapter和FragmentStatePagerAdapter对Fragment的管理略有不同
 
 *说明：这两张图片来自于《Android权威编程指南》，原图有3个Fragment，我增加了1个Fragment，以及被调到的方法。*
 FragmentPagerAdapter的Fragment管理：
+
 ![image-11-4-FragmentPagerAdapter的fragment管理-方法调用](/assets/img/android/图11-4-FragmentPagerAdapter的fragment管理-方法调用.png)
 
 FragmentStatePageAdapter的Fragment管理：
+
 ![image-11-3FragmentStatePagerAdapter的fragment管理-方法调用](/assets/img/android/图11-3FragmentStatePagerAdapter的fragment管理-方法调用.png)
 
 
@@ -126,9 +132,9 @@ D/Fragment2(25946): onCreate()
 D/Fragment2(25946): onCreateView()
 ```
 
-> FragmentPagerAdapter和FragmentStatePagerAdapter齐声说：呐，请主公贰放心，属下定会为您准备好相邻的下一页视图哒！么么哒！
+FragmentPagerAdapter和FragmentStatePagerAdapter齐声说：呐，请主公贰放心，属下定会为您准备好相邻的下一页视图哒！么么哒！
 它俩对待下一页的态度是相同的，但对于上上页，它俩做出了不一样的事情：
-> FragmentPagerAdapter说：**上上页的实例还保留着，只是销毁了它的视图**：
+FragmentPagerAdapter说：**上上页的实例还保留着，只是销毁了它的视图**：
 
 ```java
 // 第N次（N不等于1）向右滑动选中page2
@@ -137,7 +143,7 @@ D/Adapter (25946): destroyItem(0)  // 销毁page0的视图
 D/Fragment0(25946): onDestroyView()
 D/Fragment3(25946): onCreateView()  // page3的Fragment实例仍保存在FragmentManager中，所以只需创建它的视图
 ```
-> FragmentStatePagerAdapter说：**上上页的实例和视图都被俺销毁啦**：
+FragmentStatePagerAdapter说：**上上页的实例和视图都被俺销毁啦**：
 
 ```java
 // 第N次（N不等于1）向右滑选中page2
@@ -172,7 +178,7 @@ D/Fragment1(25946): onCreate()
 D/Fragment1(25946): onCreateView()
 ```
 
-## void destroyItem(ViewGroup container, int position, Object object)
+## destroyItem(...)
 
 ```java
 // Remove a page for the given position. 
@@ -274,14 +280,18 @@ D/Fragment2(21517): updateCheckedStatus(true)
 ## 一些误区
 `ViewPager.getChildCount()` 返回的是当前ViewPager所管理的没有被销毁视图的Fragment，并不是所有的Fragment。想要获取所有的Fragment数量，应该调用`ViewPager.getAdapter().getCount()`.
 
+
 ## 一个Demo
+
 为了总结ViewPager的用法，以及写这篇笔记，我写了一个demo，[你可以从这里获取它的源码 github.com/li2/](https://github.com/li2/Update_Replace_Fragment_In_ViewPager)
 
 这一张gif图片，演示了一个包含4个Fragment的ViewPager，通过上面的date+-1 button、EditText、Checkbox来更新前3个Fragment的界面；最后一个Fragment嵌套着2个Fragment，通过ToggleButton来切换。
+
 ![image-update_fragment_in_viewpager_demo](/assets/img/android/update_fragment_in_viewpager_demo.gif)
 
 
 这一张gif演示了切换ViewPager页以及更新Fragment时，相关的方法调用。通过一个ScrollView和TextView展示出来。
+
 ![image-update_fragment_in_viewpager_withlog](/assets/img/android/update_fragment_in_viewpager_log.gif)
 
 
@@ -303,24 +313,25 @@ D/Fragment2(21517): updateCheckedStatus(true)
 
 - 这些博文、问答的思路类似，讨论Fragment的tag，通过一个list<String> 存储所有Fragment的tag，然后再adapter里通过fm.findFragmentByTag获取Fragment，然后调用Fragment的update方法更新；
 或者是通过一个list<Fragment>自己来管理所有的Fragment：
-[ViewPager Fragment 数据更新问题 - shadow066的csnd专栏](http://blog.csdn.net/shadow066/article/details/17298675)
-[关于ViewPager的数据更新问题小结 - leo8573的csdn专栏](http://blog.csdn.net/leo8573/article/details/7893841)
-[Viewpager+fragment数据更新问题解析 | 姜糖水](http://www.cnphp6.com/archives/61068)
-[android - How to get existing fragments when using FragmentPagerAdapter - Stack Overflow](http://stackoverflow.com/questions/14035090/how-to-get-existing-fragments-when-using-fragmentpageradapter)
-[android - Retrieve a Fragment from a ViewPager - Stack Overflow](http://stackoverflow.com/questions/8785221/retrieve-a-fragment-from-a-viewpager)
-[android - support FragmentPagerAdapter holds reference to old fragments - Stack Overflow](
-http://stackoverflow.com/questions/9727173/support-fragmentpageradapter-holds-reference-to-old-fragments/9745935#9745935)
-**其中，这个问题的答案解释的特别好：However, the ones that are added to the fragment manager now are NOT the ones you have in your fragments list in your Activity. 企图这样更新界面是行不通的**：`pagerAdapter.getItem(1)).update(id, name)`
 
-- [android - Display fragment viewpager within a fragment - Stack Overflow](http://stackoverflow.com/questions/7700226/display-fragment-viewpager-within-a-fragment)
-Fragment里有一个ViewPager，ViewPager里有多个Fragment.
+    - [ViewPager Fragment 数据更新问题 - shadow066的csnd专栏](http://blog.csdn.net/shadow066/article/details/17298675)
+    - [关于ViewPager的数据更新问题小结 - leo8573的csdn专栏](http://blog.csdn.net/leo8573/article/details/7893841)
+    - [Viewpager fragment数据更新问题解析 - 姜糖水](http://www.cnphp6.com/archives/61068)
+    - [android - How to get existing fragments when using FragmentPagerAdapter - Stack Overflow](http://stackoverflow.com/questions/14035090/how-to-get-existing-fragments-when-using-fragmentpageradapter)
+    - [android - Retrieve a Fragment from a ViewPager - Stack Overflow](http://stackoverflow.com/questions/8785221/retrieve-a-fragment-from-a-viewpager)
+    - [android - support FragmentPagerAdapter holds reference to old fragments - Stack Overflow](http://stackoverflow.com/questions/9727173/support-fragmentpageradapter-holds-reference-to-old-fragments/9745935#9745935)
+        **其中，这个问题的答案解释的特别好：However, the ones that are added to the fragment manager now are NOT the ones you have in your fragments list in your Activity. 企图这样更新界面是行不通的**：`pagerAdapter.getItem(1)).update(id, name)`
+    - [android - Display fragment viewpager within a fragment - Stack Overflow](http://stackoverflow.com/questions/7700226/display-fragment-viewpager-within-a-fragment)
+        Fragment里有一个ViewPager，ViewPager里有多个Fragment.
 
 - 这些是**Android Fragment相关的源码文件**：
-[Android源码仓库](http://grepcode.com/project/repository.grepcode.com/java/ext/com.google.android/android/)
-[android.support.v4.app.Fragment](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/Fragment.java)
-[android.support.v4.view.PagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/view/PagerAdapter.java)
-[android.support.v4.app.FragmentPagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentPagerAdapter.java)
-[android.support.v4.app.FragmentStatePagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentStatePagerAdapter.java)
+
+    - [Android源码仓库](http://grepcode.com/project/repository.grepcode.com/java/ext/com.google.android/android/)
+    - [android.support.v4.app.Fragment](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/Fragment.java)
+    - [android.support.v4.view.PagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/view/PagerAdapter.java)
+    - [android.support.v4.app.FragmentPagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentPagerAdapter.java)
+    - [android.support.v4.app.FragmentStatePagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentStatePagerAdapter.java)
+
 
 # 关于作者
 

@@ -16,7 +16,7 @@ tags: [android-animation, android-sdk]
 其中有一段话是这样的：
 
 > But for a more detailed view of how things work, check out the **API Demos in the SDK for the new animations**. There are many small applications written for the new Animations category (at the top of the list of demos in the application, right before the word App. I like working on animation because it usually comes first in the alphabet).
-
+>
 > SDK samples 包含了一个例子 ApiDemos，这个例子详尽地展示了如何使用 3.0 SDK API。其中一部分 demos 正是关于**新的动画机制（android.animation）**。而和 animation 相关的 demos 排在整个列表的最前面，比 App demos 还靠前，这就是我为什么喜欢研究 animation 的原因。
 
 （这个点可真奇特（简（可）单（爱）），不知道这些牛人在想什么，哈哈）

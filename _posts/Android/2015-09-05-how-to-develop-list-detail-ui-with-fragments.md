@@ -486,7 +486,9 @@ diff --git a/src/me/li2/android/criminalintent/DatePickerFragment.java b/src/me/
              .setView(v)
              .setTitle(R.string.date_picker_title)
 ```
+
 ### 同一个Activity托管的两个Fragment如何回传结果
+
 现在用户选择完了日期，点击确定按钮后，如何把这个日期数据从DatePickerFragment回传到CrimeFragment呢？
 > Fragment提供来了另外一种绑定方式：为fragment设置数据返回的目标fragment和请求码：调用Fragment.setTargetFragment(Fragment fragment, int requestCode)。
 > 然后通过getTargetFragment().onActivityResult(getTargetRequestCode(), int resultCode, Intent data)方法实现数据的回传。

@@ -121,6 +121,7 @@ ArrayAdapter<Crime> adapter = new ArrayAdapter<Crime>(
 // 类ListFragment的方法，为内置 ListView 设置 Adapter.
 setListAdapter(adapter);
 ```
+
 ### 响应列表项的点击事件
 需要覆盖 ListFragment 的方法：
 `public void onListItemClick(ListView l, View v, int position, long id)`

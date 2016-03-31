@@ -14,20 +14,22 @@ tags: [android-eclipse]
 - [官网下载Android SDK](http://developer.android.com/sdk/index.html)，只提供了基础开发工具，还需要通过Android SDK Manager下载其它工具；
 - 配置eclipse的Android SDK路径；
 
-<!-- more -->
 
 ## 部署Java Development Kit
 
 在ubuntu环境下，需要安装`openjdk-7-jre`. 否则打开eclipse时遇到错误提示：
+
 > A Java Runtime Environment(JRE) or Java Development Kit(JDK) must available in order to run Eclipse. No Java virtual machine was found after searching the following locations:
 
 
 ## 在64bit Ubuntu中安装32bit support library
 
 在64bit OS上使用eclipse，及这个版本的`android-sdk_r24.1.2-linux`SDK时，会遇到错误：
+
 > Error executing cannot run program .../build-tools/21.1.1/aapt": error=2, No such file or directory
 
 [Android Install System Requirements](https://developer.android.com/sdk/index.html)提到
+
 > Tested on Ubuntu® 14.04, Trusty Tahr (64-bit distribution capable of running 32-bit applications).
 
 [Error: Cannot run aapt](http://stackoverflow.com/questions/18041769/error-cannot-run-aapt)  这个问答告诉我们通过`file`和`ldd`命令查看aapt的属性：
@@ -55,9 +57,10 @@ $ ldd build-tools/22.0.1/aapt
 
 问题是，如何从ldd信息中得到需要安装的包？
 [Is there a way to determine what packages or libraries should be loaded to support an executable?](http://unix.stackexchange.com/questions/101824/is-there-a-way-to-determine-what-packages-or-libraries-should-be-loaded-to-suppo)
+
 > Run ldd as you have, then manually install those dependencies.
-For example `libpango-1.0.so.0 => /usr/lib/i386-linux-gnu/libpango-1.0.so.0 (0xb702f000)`
-For me would mean installing `apt-get install libpango:i386` and praying that the version in Debian unstable was good enough.
+> For example `libpango-1.0.so.0 => /usr/lib/i386-linux-gnu/libpango-1.0.so.0 (0xb702f000)`
+> For me would mean installing `apt-get install libpango:i386` and praying that the version in Debian unstable was good enough.
 
 
 如果遇到权限错误，
@@ -75,9 +78,7 @@ sudo dpkg -P oracle-java7-installer
 sudo apt-get -f install
 ```
 
-## 运行Android Virtual Device
-
-http://xmodulo.com/how-to-run-android-emulator-on-ubuntu-or-debian.html
+## [运行Android Virtual Device](http://xmodulo.com/how-to-run-android-emulator-on-ubuntu-or-debian.html)
 
 
 ## Eclipse theme

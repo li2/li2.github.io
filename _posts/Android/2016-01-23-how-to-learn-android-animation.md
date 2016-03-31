@@ -8,7 +8,7 @@ tags: [android-animation]
 在 [Android 开发者网站](http://developer.android.com/)  搜索『animation』，通过『blog』过滤搜索结果，可以获得很多博文，我只摘录了前两页，并把它们分成了两类：
 
 
-##动画可以做成什么样子（第1类）
+## 动画可以做成什么样子（第1类）
 
 
 下述几篇博文通过如下3个方面向开发者展示『动画』：
@@ -19,14 +19,14 @@ tags: [android-animation]
 
 **这非常棒，可以帮助我们很快建立动画的印象，了解某个名词代表的动画是什么样子，应该怎么去实现。而且代码片段很多是从开源项目中摘录的，意味着我们可以调试这些动画。**
 
-###[2014-08-05 Material design in the 2014 Google I/O app](http://android-developers.blogspot.com/2014/08/material-design-in-2014-google-io-app.html)
+### [2014-08-05 Material design in the 2014 Google I/O app](http://android-developers.blogspot.com/2014/08/material-design-in-2014-google-io-app.html)
 
 这篇文章的作者是 Google I/O app 的主设计师，而 I/O app 的作用之一是**提供 Android 设计和开发的最佳实践**（it serves as a reference demo for Android design and development best practices）。文中特别提到了**最喜爱的 app 细节之一就和动画有关**：浮动操作按钮（floating action button）的状态根据“用户是否会出席当前页面的这个会议”而改变，状态改变时伴随着动画。文中详细地讲到了动画实现的步骤，虽未罗列代码，但可以从 [github-google-io-app](https://github.com/google/iosched) 获取源码，了解实现细节。
 
 ![io](/assets/img/android/learn-android-animation-io.gif)
 
 
-###[2014-10-24 Implementing Material Design in Your Android app](http://android-developers.blogspot.com/2014/10/implementing-material-design-in-your.html)
+### [2014-10-24 Implementing Material Design in Your Android app](http://android-developers.blogspot.com/2014/10/implementing-material-design-in-your.html)
 
 这篇文章一半篇幅在讲**『Motion』：当用户触摸屏幕时，所有的变化应从接触点开始向外辐射，建立画面过渡时的关联和连续性**，这些必须是有意义且友好的。Materials 通过这种方式向用户提供反馈，使用户注意到变化，从而帮助到用户。（to focus attention, establish spatial relationships and maintain continuity. Materials respond to touch to confirm your interaction and all changes radiate outward from your touch point. All motion is meaningful and intimate, aiding the user’s comprehension.）。分别介绍了：
 
@@ -36,33 +36,33 @@ tags: [android-animation]
 - **Circular Reveal**：一个圆形扇面从触点开始向外辐射直至填充整个view，这种过渡效果常用于展示新的内容；
 - **Interpolators**：插值器定义了动画改变的速率，比如允许 alpha, scale, translate, rotate 加速、减速、重复等。比如插值器 fast_out_slow_in， 加速开始、逐渐降速直至结束，这样的动画效果使得对象在整个运动轨迹中，在接近终点的位置耗费较多时间。而根据不同的场景，选择不同的插值器或者自定义插值器，就可以使动画更具意义，摆脱千篇一律的印象。
 
-###[2015-05-28 Announcing the Material Design Showcase and Awards](http://android-developers.blogspot.com/2015/05/announcing-material-design-showcase-and.html)
+### [2015-05-28 Announcing the Material Design Showcase and Awards](http://android-developers.blogspot.com/2015/05/announcing-material-design-showcase-and.html)
 
 这篇文章先回顾了14年6月首次公布 material design 时的愿景**『a single design system that can work across platforms and brands』**。但这些愿景和 material design 的设计思想全是通过『假想中的 App』 来演示的。然后转眼到了15年5月，也就是这篇文章发布的日期，世界已经发生了变化，很多 App 接受并通过 Android 5.0 SDK 和 AppCompat 实现了material design。
 
 因此特别收集了 18 个符合 material design 的 app 向众人展示，其中 6 个 app 由于在 material design 某一方面做的特别出色而被授予了第一届 Material Design Awards. 因动画效果而获奖的是 Tumblr: Delightful Animation. 
 **动画效果可以做成什么样子**，官方告诉你去看看 Tumblr.
 
-###[2015-06-16 More Material Design with Topeka for Android](http://android-developers.blogspot.com/2015/06/more-material-design-with-topeka-for_16.html)
+### [2015-06-16 More Material Design with Topeka for Android](http://android-developers.blogspot.com/2015/06/more-material-design-with-topeka-for_16.html)
 
 这篇文章是开源 Android App 项目 [Topeka for Android](https://github.com/googlesamples/android-topeka) 的说明文档，用来**演示 material design 的设计原则**，帮助开发者在不同的平台上建立统一的用户体验。(原文：It demonstrates that the same branding and material design principles can be used to create a consistent experience across platforms.)
 
 Topeka 是一个趣味问答应用，包含9个种类的问题，以网格布局呈现，点击某个格子进入回答问题的页面，一个问题回答完后就切换到下一个问题，有选择题填空题等各种类型的问题（对应各种UI组件）。包含了很多动画元素：
 
-(1) Transitions: 很棒的 Activities 转场动画（great transitions between Activities）；
+1. Transitions: 很棒的 Activities 转场动画（great transitions between Activities）；
 
-![transitioins](/assets/img/android/learn-android-animation-transitions.gif)
+    ![transitioins](/assets/img/android/learn-android-animation-transitions.gif)
 
-(2) Animations: 答题时有精心编排的动画，一旦答题就弹出一个浮动操作按钮，点击按钮提交答案就进入了下一个问题，这时会根据回答正确与否播放对应的动画；
+1.  Animations: 答题时有精心编排的动画，一旦答题就弹出一个浮动操作按钮，点击按钮提交答案就进入了下一个问题，这时会根据回答正确与否播放对应的动画；
 
-![complex animations](/assets/img/android/learn-android-animation-complex.gif)
+    ![complex animations](/assets/img/android/learn-android-animation-complex.gif)
 
-(3) Property Animations：为 circular reveal 增加颜色渐变的动画（从FAB的颜色变成透明）以营造出消融的效果（Adding a color animation from the FAB's color to transparent creates a dissolve like effect to the circular reveal）。（上上一个gif包含这种效果，但太快了看不出效果，下面这个gif延长了时间，为了突出动画）；
+1. Property Animations：为 circular reveal 增加颜色渐变的动画（从FAB的颜色变成透明）以营造出消融的效果（Adding a color animation from the FAB's color to transparent creates a dissolve like effect to the circular reveal）。（上上一个gif包含这种效果，但太快了看不出效果，下面这个gif延长了时间，为了突出动画）；
 
-![property animations](/assets/img/android/learn-android-animation-property.gif)
+    ![property animations](/assets/img/android/learn-android-animation-property.gif)
 
 
-##概述动画相关的类和接口（第2类） 
+## 概述动画相关的类和接口（第2类）
 
 - [2011-05-30 Introducing ViewPropertyAnimator](http://android-developers.blogspot.com/2011/05/introducing-viewpropertyanimator.html)
 - [2011-02-24 Animation in Honeycomb](http://android-developers.blogspot.com/2011/02/animation-in-honeycomb.html)
@@ -80,7 +80,7 @@ Topeka 是一个趣味问答应用，包含9个种类的问题，以网格布局
 **通读完上述几篇文章后，我们就能够了解到『动画可以做成什么样子』、『实现这些动画的类和接口，及技术的演变历史』。是不是有种高屋建瓴、运筹帷幄的感觉？我的感觉是，不至于淹没于 Android 文档的海洋中，被巨多的技术细节打的晕头转向。而且我觉得学习 demo 时在精不在多，所以应该先从官方的 sample 以及上述官方文章中的 demo 入手，同时查阅 API guides：**
 
 
-##Android Training & Guides
+## Android Training & Guides
 
 Android 开发者网站提供的 Training：
 
@@ -97,7 +97,7 @@ Android 开发者网站提供的 API Guides：
 ![import sample](/assets/img/android/learn-android-animation-sample.png)
 
 
-##学习路线图
+## 学习路线图
 
 非官方的博文也有很棒的，比如下面这一篇：
 
