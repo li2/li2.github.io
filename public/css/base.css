@@ -106,6 +106,12 @@ body, html {
   text-align: center;
   color: #303030;
 }
+.aside3-copyright {
+  padding: 0 5% 0 5%;
+  color: #656565;
+  background-color: #89E8D5;
+  line-height: 1.5;
+}
 .aside3-content {
 /*  padding-left: 40px;
   padding-right: 40px;
