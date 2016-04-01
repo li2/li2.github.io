@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『笔记』Shell脚本学习指南-第10章-文件处理
+title: 「Shell脚本学习指南笔记」第10章-文件处理
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-10.md
 category: Unix
 tags: [shell]

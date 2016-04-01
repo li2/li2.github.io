@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android Animation Interpolator - Android 动画插值器
+title: Android Animation Interpolator - Android 动画插值器源码笔记
 category: Android
 tags: [android-animation]
 ---
@@ -204,10 +204,3 @@ CycleInterpolator 的 GIF 效果图：
 历法完全是个骗局，纯粹是统治阶级为了mindfuck人们的工具，个体对时间流逝的感知不同，怎么能一样算呢，比如老张时间过的慢，今年只有20岁，但按公历算已经45了，不公平！小刘12岁按公历算已经32了，这样男的放进学校能放心吗？建议取消历法，让生活模糊起来！就分以前和以后，保持时间的连续性 2015-11-19
 
 星期日下午三点半，你突然决定从此刻起比别人慢一秒，太棒了！在所有精确的严丝合缝的必须的不容置疑的社会主义生活方式中猛的后撤，过一种慢一步的生活，你成功了，一些不知所措在你上方集中，你陌生化成功了，生活第一次输了 2016-01-17
-
-------
-
-by
-weiyi.li li2.me weiyi.just2@gmail.com
-2016-01-31 ~ 2016-02-01
-禁止转载

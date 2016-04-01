@@ -554,7 +554,3 @@ diff --git a/src/me/li2/android/criminalintent/DatePickerFragment.java b/src/me/
 
 整理自《安卓权威编程指南 Android Programming - The Big Nerd Ranch Guide》第7~12章、16~22章。
 [你可以从这里获取源码 Learning_Android_Criminal_Intent](https://github.com/li2/Learning_Android_Programming/tree/master/Criminal_Intent)
-李2
-SH 2015-09-05
-li2.me
-weiyi.just2@gmail.com

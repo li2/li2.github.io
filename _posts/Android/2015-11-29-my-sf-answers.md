@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 分类整理我在SF上针对某些问题作的回答
+title: 分类整理我在 SegmentFault 上针对某些问题作的回答
 category: Android
 tags: []
 ---
@@ -573,8 +573,3 @@ self.fristSectionCollectionViewCell.delegate = self;
 
 - sizeof(数组名)：返回数组长度（所占的字节数，不是数组元素个数），而不是指向数组的指针的长度。
 - &数组名：产生一个指向数组的指针，而不是一个指向某个指针常量的指针。
-
-by weiyi.li
-2015-11-29
-SH
-

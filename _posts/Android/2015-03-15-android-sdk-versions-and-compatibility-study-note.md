@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『Android编程权威指南 读书笔记』SDK版本与兼容 
+title: 「Android编程权威指南笔记」SDK版本与兼容 
 category: Android
 tags: []
 ---
@@ -32,6 +32,3 @@ protected void onCreate(Bundle savedInstanceState) {
 
 - 《Android编程权威指南》Bill Phillips  Brian Hardy著，王明发 译。人民邮电第1版。
     英文版书名《Android Programming - The Big Nerd Ranch Guide》
-
----
-李贰 2015-03-15 沪北

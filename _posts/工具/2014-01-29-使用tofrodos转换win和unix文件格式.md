@@ -18,5 +18,3 @@ Usage: fromdos [options] [file...]
 Usage: todos [options] [file...]
 
 `$sudo apt-get install tofrodos`
-
-by li2- 沪北 20140129

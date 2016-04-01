@@ -14,6 +14,3 @@ tags: []
 所以，只要点击「Sign in anyway」就能把 chrome 数据同步到新账号中了。
 
 ![image](/assets/img/util/merge-chrome-info-from-another-account-2.png)
-
-
-li2，2016年02月19日，沪北。

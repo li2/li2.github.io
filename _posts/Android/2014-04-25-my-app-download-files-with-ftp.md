@@ -92,6 +92,3 @@ activity定义于AndroidManifest.xml:`<activity android:name=".MainActivity">`
 `Caused by: java.io.FileNotFoundException: /mnt/sdcard/packedDifference.f2p7enc.ee: open failed: EACCES (Permission denied)`
 删除AndroidManifest.xml中的`android:sharedUserId="android.uid.system"`，然后重新编译apk。
 可以解决问题，但原因不明。TODO
-
-------
-by li2-    2014-04-25 19:19    上海闸北    小雨 

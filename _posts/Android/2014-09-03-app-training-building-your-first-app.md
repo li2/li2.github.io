@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『App Training笔记』创建第一个应用
+title: 「App Training笔记」创建第一个应用
 category: Android
 tags: [android-layout]
 ---
@@ -13,7 +13,7 @@ tags: [android-layout]
 <!-- more -->
 
 ## 使用eclipse创建工程
-Create a Project with Eclipse
+create a Project with Eclipse
  
 演示了如何使用android sdk tools的向导创建工程。需要注意的是如下概念的区别：Application Name, Project Name, Package Name, Minimum Required SDK, Target SDK, Compile With.
 

@@ -93,9 +93,3 @@ Android SDK Manager 如果更新失败则需设置代理：`Tools > Options...`�
 
 Eclipse 在install new software时一直pending也需要设置代理，特别需要注意的是，在设置了`HTTP`和`HTTPS`的host和port后，**需要把`SOCKS`条目的内容清掉，否则仍然连不上网**。参考：
 [stackoverflow: Eclipse not connecting to internet via proxy](http://stackoverflow.com/questions/17338212/eclipse-kepler-not-connecting-to-internet-via-proxy)
-
-
----
-
-整理于2015-03-27
-by li2- 沪北

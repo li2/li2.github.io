@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『App Training笔记』开发入门训练大纲
+title: 「App Training笔记」开发入门训练大纲
 category: Android
 tags: []
 ---

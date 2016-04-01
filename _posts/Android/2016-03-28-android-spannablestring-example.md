@@ -77,11 +77,3 @@ private SpannableStringBuilder addImageToText(Context context, int drawableId, S
 ```
 
 完整代码参阅 [Github/SpannableTextActivity.java](https://github.com/TakeoffAndroid/SpannableTextview/blob/master/app/src/main/java/com/takeoffapp/spannabletextview/SpannableTextActivity.java)
-
-
-------
-
-by
-weiyi.li [li2.me](li2.me) <weiyi.just2@gmail.com>
-2016-03-28
-禁止转载

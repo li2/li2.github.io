@@ -96,7 +96,3 @@ onTabChanged(): 2, fragment HistoryFragment{10c59e72 #3 id=0x7f09006e 2}
 ```
 
 [How to get current selected Fragment in FragmentTabHost](http://stackoverflow.com/questions/27854072/how-to-get-current-selected-fragment-in-fragmenttabhost/33028970#33028970)
-
-------
-
-by weiyi.li, http://li2.me, SH, 2015-10-12

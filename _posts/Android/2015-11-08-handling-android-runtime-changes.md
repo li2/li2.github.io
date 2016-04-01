@@ -190,11 +190,5 @@ public class BoxDrawingView extends View {
 
 
 ## 设备旋转时，如何处理正在运行的线程？ TODO
-------
-
-by weiyi.li http://li2.me SH 
-2015-11-08 01:39:17 part1
-2015-11-10 part2
-2015-11-11 part3
 
 

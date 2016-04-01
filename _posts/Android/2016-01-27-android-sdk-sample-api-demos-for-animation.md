@@ -562,10 +562,3 @@ $ tree -L 2
 
 16 directories, 391 files
 ```
-
-------
-
-by
-weiyi.li [li2.me](http://li2.me) <weiyi.just2@gmail.com>
-2016-01-26 ~ 2016-01-27
-禁止转载

@@ -327,9 +327,3 @@ public class ThumbnailDownloader<Token> extends HandlerThread {
 - [HandlerThread源码链接](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/os/HandlerThread.java)
 - [Message源码链接](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/os/Message.java)
 - [Looper源码链接](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/os/Looper.java)
-
-------
-
-by weiyi.li http://li2.me SH 2015-10-13~2015-10-15
-禁止转载
-

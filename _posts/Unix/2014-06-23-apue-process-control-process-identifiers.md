@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『笔记』UNIX环境高级编程 - 进程控制 - 进程标识
+title: 「UNIX环境高级编程笔记」- 进程控制 - 进程标识
 category: Unix
 tags: []
 ---

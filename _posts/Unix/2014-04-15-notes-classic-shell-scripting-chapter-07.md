@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『笔记』Shell脚本学习指南-第07章-输入输出-文件与命令执行
+title: 「Shell脚本学习指南笔记」第07章-输入输出-文件与命令执行
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-07.md
 category: Unix
 tags: [shell]

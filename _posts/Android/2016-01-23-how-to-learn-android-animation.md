@@ -114,4 +114,5 @@ Android 开发者网站提供的 API Guides：
 3. 学习 GitHub 高星（感兴趣的）项目（好多人推荐了好多非常好的项目）；
 4. 阅读其它高质量的 blog 查缺补漏（善用 google）；
 
-Go! Go! Go! li21 SH 2016-01-16 ~ 2016-01-23
+Go! Go! Go!
+

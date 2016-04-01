@@ -360,11 +360,4 @@ public class ChapterPageAdapter extends FragmentPagerAdapter {
 [这里是app的源码](https://github.com/li2/TalkingBook21_AndroidApp)
 [这里是制作timing json file的开源命令行工具](https://github.com/li2/TalkingBook21_AudioSync)
 
-
-## 关于
-
-李2
-你国一个程序员
-http://li2.me weiyi.just2@gmail.com
-沪北
 2015-05-31 ~ 2015-08-21

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『笔记』Shell脚本学习指南-第01-05章-正则表达式-文本查找替换排序-管道
+title: 「Shell脚本学习指南笔记」第01-05章-正则表达式-文本查找替换排序-管道
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-01-05.md
 category: Unix
 tags: [shell]
@@ -13,8 +13,6 @@ tags: [shell]
 使用一年多，然后系统的看书。精读，记录。
 给你时间的工作，很喜欢。
   
-<!-- more -->
-
 ## 第1,2章 背景知识与入门
 
 ------

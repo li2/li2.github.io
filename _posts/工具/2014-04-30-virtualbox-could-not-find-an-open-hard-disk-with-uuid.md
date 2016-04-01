@@ -18,6 +18,3 @@ tags: []
 
 - [类似问题1 by 小可同学 - 博客园](http://www.cnblogs.com/sammyke/archive/2012/02/16/2353708.html)
 - [类似问题2 VirtualBox upgrade trashed my virtual machine - Stack Overflow](http://stackoverflow.com/questions/5209881/virtualbox-upgrade-trashed-my-virtual-machine)
-
-------
-by li2-    ShangHai    2014-04-30 22:08    

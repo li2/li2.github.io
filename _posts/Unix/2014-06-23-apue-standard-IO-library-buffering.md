@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『笔记』UNIX环境高级编程 - 标准IO库 - 缓冲
+title: 「UNIX环境高级编程笔记」- 标准IO库 - 缓冲
 filename: 2014-06-23-Standard-IO-Library-Buffering.md
 category: Unix
 tags: []

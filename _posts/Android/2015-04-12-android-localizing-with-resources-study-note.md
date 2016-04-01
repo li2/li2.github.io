@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『Android编程权威指南 读书笔记』Android应用本地化
+title: 「Android编程权威指南笔记」Android应用本地化
 category: Android
 tags: [android-resources]
 ---
@@ -35,6 +35,3 @@ res/values-zh-land/ # 多重配置修饰符，修饰符必须按照优先级顺�
 - 《Android编程权威指南》第11章应用本地化， Bill Phillips  Brian Hardy著，王明发 译。人民邮电第1版。
     英文版书名《Android Programming - The Big Nerd Ranch Guide》
 - 官方文档 [Localizing with Resources](http://developer.android.com/guide/topics/resources/localization.html)
-
----
-李贰 2015-04-12 沪北

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『笔记』Shell脚本学习指南-第13章-进程
+title: 「Shell脚本学习指南笔记」第13章-进程
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-13.md
 category: Unix
 tags: [shell]

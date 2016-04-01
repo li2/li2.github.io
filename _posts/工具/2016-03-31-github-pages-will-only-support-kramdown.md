@@ -1,6 +1,7 @@
 ---
 layout: post
-title: GitHub Pages will only support kramdown
+title: GitHub Pages 仅支持 kramdown 后遇到的 markdown 文本渲染问题
+description: Github 从 2016.5.1 开始仅支持 `kramdown` 和代码高亮 `rouge`，所以需要修改 `_config.yml` 的 markdown 和 highlighter 配置。替换 markdown 解析器之后导致了一些渲染错误。比如，所有使用 **\`\`\`** 标记的代码块没有被正确渲染；段落内的回车换行符没有被识别。这篇文章罗列了我遇到的这些问题及解决办法。
 category: 工具
 tags: []
 ---
@@ -73,7 +74,3 @@ Markdown 有很多渲染器，有些扩展了 markdown 的核心语法，所以�
 还有，不能被一些网站的 markdown 编辑器给惯出坏毛病了。
 
 参考：[Markdown 语法说明 (简体中文版)](http://wowubuntu.com/markdown/index.html)
-
-------
-
-[li2](http:li2.me)，2016年03月31日，沪北。

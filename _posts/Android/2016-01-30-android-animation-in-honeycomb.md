@@ -378,14 +378,7 @@ staggered adj. 错列的；吃惊的。 [LayoutAnimationController](http://devel
 - [Android属性动画完全解析(中)，初识属性动画的基本用法 -- 郭霖的CSDN专栏](http://blog.csdn.net/guolin_blog/article/details/43816093)
 - [Honeycomb 中引入的新 Animation —— Property Animation](http://blog.csdn.net/zhaoshecsdn/article/details/46650163) （这是全文翻译）
 
-
 ------
-
-
-by
-weiyi.li li2.me weiyi.just2@gmail.com
-2016-01-28 ~ 2016-02-01
-禁止转载
 
 **不把阅读英文文档当做翻译事业的程序员不是好厨子**
 ![da](/assets/img/android/android-animation-da-translation.png)

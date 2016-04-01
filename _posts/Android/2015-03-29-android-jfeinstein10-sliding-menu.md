@@ -49,8 +49,3 @@ Lastly, **add your `SampleListFragment` to your activity's fragment manager**:
 
 In this way, you got a sliding menu in your fragment activity.
 That's all.
-
----
-
-整理于2015-03-29
-by li2- 沪北

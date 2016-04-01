@@ -43,7 +43,3 @@ public MyFragment() {
 参考：
 [Fragment Class Overview](https://developer.android.com/intl/zh-cn/reference/android/app/Fragment.html)
 [Android InstantiationException With Fragment (It Is Public)](http://stackoverflow.com/questions/14031110/android-instantiationexception-with-fragment-it-is-public)
-
-------
-by weiyi.li, http://li2.me, SH, 2015-10-12
-

@@ -189,8 +189,3 @@ adapter.addMoreItems(newItems);
 如下的GIF演示了上拉加载的过程：
 
 ![demo](/assets/img/android/android-pull-up-load-listview.gif)
-
-------
-
-weiyi.li - weiyi.just2@gmail.com http://li2.me
-2016-01-09~2016-01-12

@@ -100,9 +100,3 @@ git push --force --tags origin 'refs/heads/*'
 ```
 [全局性地更换电子邮件地址](http://git-scm.com/book/zh/v1/Git-工具-重写历史)
 [Change the author of a commit in Git](http://stackoverflow.com/a/750182/2722270)
-
-*整理于2015-04-04*
-
----
-
-by li2 上海闸北

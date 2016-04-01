@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『笔记』Shell脚本学习指南-第09章-awk的惊人表现
+title: 「Shell脚本学习指南笔记」第09章-awk的惊人表现
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-09.md
 category: Unix
 tags: [shell]

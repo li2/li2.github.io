@@ -36,7 +36,3 @@ gistbox使管理、添加、使用gist（代码段）变得肥肠容易（前提
 
 - [GixBox 官网](GistBox - The Beautiful Way to Organize Code Snippets)
 - [Here's a quick tutorial on how to save code snippets with the extension](GistBox - The Beautiful Way to Organize Code Snippets)
-
-------
-
-by weiyi.li 2016-01-13

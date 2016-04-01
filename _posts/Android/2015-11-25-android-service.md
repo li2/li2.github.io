@@ -208,9 +208,3 @@ Service运行于 UI 线程，所以如果有耗时的操作，需要在 service 
 [链接 Android_Message_Handler_消息处理机制总结笔记](http://segmentfault.com/a/1190000003862319)
 [onServiceDisconnected problem not called](http://stackoverflow.com/a/5293050/2722270)
 [『1. 图解Android Binder 和 Service』](http://www.cnblogs.com/samchen2009/p/3316001.html), [『2. Android开发：什么是IBinder』](http://blog.csdn.net/niu_gao/article/details/6453218)
-
-------
-
-by weiyi.li http://li2.me SH 2015-11-23~2015-11-25
-禁止转载
-

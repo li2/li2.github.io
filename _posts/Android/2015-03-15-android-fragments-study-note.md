@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『Android编程权威指南 读书笔记』UI Fragment
+title: 「Android编程权威指南笔记」UI Fragment
 category: Android
 tags: [android-fragments]
 ---
@@ -104,6 +104,3 @@ FragmentManager保持fragment与activity的状态一致，但fragment方法究�
 
 - 《Android编程权威指南》Bill Phillips  Brian Hardy著，王明发 译。人民邮电第1版。
     英文版书名《Android Programming - The Big Nerd Ranch Guide》
-
----
-李贰 2015-03-15 沪北

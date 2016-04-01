@@ -112,10 +112,3 @@ ViewPropertyAnimator 提供了一种并行属性动画的简单方法。只需�
 以上讲这么多，并不意味着 ViewPropertyAnimator 可以取代 3.0 中 animation 相关的 API。事实上 3.0 相关 API 为 ViewPropertyAnimator 甚至整个系统的动画功能提供了重要的支持。ObjectAnimator 可以灵活方便为任何对象和属性做动画。但当需要同时为 View 的多个属性（SDK提供的，非自定义扩展的）做动画时，ViewPropertyAnimator 会更方便。
 
 还要注意的是：使用 ObjectAnimator 时并不需要太过担心性能，使用反射和 JNI 等带来的开销相对整个程序来讲都是较小的。使用 ViewPropertyAnimator 最大的优势也不在于性能的提升，对我来讲，而是它提供的简明易读的代码书写方式。
-
-------
-
-by
-weiyi.li [li2.me](li2.me) <weiyi.just2@gmail.com>
-2016-02-02 ~ 2016-02-03
-禁止转载

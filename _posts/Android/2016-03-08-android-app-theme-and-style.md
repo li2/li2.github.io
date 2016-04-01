@@ -7,11 +7,3 @@ tags:
 
 TODO
 总结最近项目中用到的相关技巧
-
-
-------
-
-by
-weiyi.li [li2.me](li2.me) <weiyi.just2@gmail.com>
-2016-03-08
-禁止转载

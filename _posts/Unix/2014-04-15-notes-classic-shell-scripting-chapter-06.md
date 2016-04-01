@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 『笔记』Shell脚本学习指南-第06章-变量-判断-重复动作
+title: 「Shell脚本学习指南笔记」第06章-变量-判断-重复动作
 filename: 2014-04-15-notes-Classic-Shell-Scripting-chapter-06.md
 category: Unix
 tags: [shell]

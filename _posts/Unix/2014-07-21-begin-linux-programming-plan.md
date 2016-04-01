@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 《Linux程序设计》学习计划跟踪
+title: 「Linux程序设计」学习计划跟踪
 filename: 2014-07-21-Begin-Linux-Programming-Plan.md
 category: Unix
 tags: []

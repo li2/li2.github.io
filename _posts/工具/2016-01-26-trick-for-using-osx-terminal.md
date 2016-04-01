@@ -31,7 +31,6 @@ $ tree -L 2
 
 ```
 参考：[How to list all the files in a tree (a directory and its subdirs)?](http://askubuntu.com/questions/15419/how-to-list-all-the-files-in-a-tree-a-directory-and-its-subdirs)
-2016-01-26
 
 
 

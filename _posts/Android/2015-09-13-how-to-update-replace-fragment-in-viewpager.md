@@ -331,9 +331,3 @@ D/Fragment2(21517): updateCheckedStatus(true)
     - [android.support.v4.view.PagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/view/PagerAdapter.java)
     - [android.support.v4.app.FragmentPagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentPagerAdapter.java)
     - [android.support.v4.app.FragmentStatePagerAdapter](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/5.1.1_r1/android/support/v4/app/FragmentStatePagerAdapter.java)
-
-
-# 关于作者
-
-Copyright (C) 2015 WeiYi Li (li21)    weiyi.just2@gmail.com    li2.me
-**特别声明：禁止转载**
