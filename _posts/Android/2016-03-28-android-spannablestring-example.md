@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 使用 SpannableString 格式化字符串，实现前景色、下划线、超链接、图文混排等
+description: 使用 SpannableString 格式化字符串，添加前景色、背景色，改变文字的相对大小，设置粗体、斜体，添加下划线、删除线，设置超链接，添加上标、下标，添加图片到字符串实现图文混排，等等。
 category: Android
 tags: [android-view]
 ---

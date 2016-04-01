@@ -15,7 +15,7 @@ author:
 
 # 站点信息
 title:              li2的博客
-description:        My personal blog
+description:        你国一个程序猿的编程之路
 url:                http://li2.me
 #url: http://127.0.0.1:4000 # debug
 production_url:     http://li2.me           # production_url是sitemap生成的url,方便百度谷歌收录.
