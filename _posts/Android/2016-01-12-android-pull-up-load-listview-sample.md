@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 如何实现 Android ListView『上拉加载更多』？
+title: 如何实现 Android ListView「上拉加载更多」？
 category: Android
 tags: [android-listview]
 ---
@@ -183,7 +183,8 @@ adapter.addMoreItems(newItems);
 这样就显得清晰很多了。
 
 
-[你可以从这里获取源码：Learning_Android_Open_Source/Pull_Up_Load_ListView_Sample](https://github.com/li2/Learning_Android_Open_Source/tree/master/Pull_Up_Load_ListView_Sample)
+[你可以从这里获取源码：Learning_Android_Open_Source/Pull_Up_Load_ListView_Sample](https://github.com/li2/Learning_Android_Open_Source/tree/master/PullUpLoadListView)
+
 
 
 如下的GIF演示了上拉加载的过程：
