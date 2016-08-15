@@ -2,6 +2,7 @@
 layout: post
 title: Make a Reusable UI in Android App Development
 description: 
+category: Android
 tags: [android-view]
 ---
 
@@ -16,6 +17,9 @@ It's important to an App developer to build a reusable, flexible and easy-to-mod
 Using UI fragments separates the UI of your app into building blocks, and create an abstract activity for hosting a fragment.
 
 
+*Copyright: [Make a Reusable UI in Android App Development](http://li2.me/2016/08/make-a-reusable-ui-in-android-app-development.html) is written by Weiyi.Li [http://li2.me](http://li2.me)*
+
+
 
 ## Step1: Create A Generic Fragment-Hosting Layout
 
@@ -28,8 +32,6 @@ Code Snippet:
 
 `toolbar_actionbar.xml` code [click here](https://gist.github.com/38794f9afb5047579f32dc42aca340dd.git).
 
-
-*Copyright: [Make a Reusable UI in Android App Development](http://li2.me/2016/08/make-a-reusable-ui-in-android-app-development.html) is written by Weiyi.Li [http://li2.me](http://li2.me)*
 
 
 ## Step2: Create An Abstract Activity class
