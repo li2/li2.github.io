@@ -41,23 +41,23 @@ Nearly every activity you will create in this app will require the same code:
 - Set the ActionBar title, callbacks when ActionBar's Back & Close button clicked.
 - Create a fragment instance and commit it.
 
-To avoid typing it again and again, you are going to stash it in an abstract class `BasicActivity.java`:
+To avoid typing it again and again, you are going to stash it in an abstract class `BasicActivity.java`, code snippet::
 <script src="https://gist.github.com/li2/71990eec8eea0edcc483eafd6083a0f0.js"></script>
 
-To inflate bottom toolbar layout for activity which has a bottom toolbar, create another abstract class `BasicOperationActivity.java` which extends `BasicActivity.java`:
+To inflate bottom toolbar layout for activity which has a bottom toolbar, create another abstract class `BasicOperationActivity.java` which extends `BasicActivity.java`, code snippet:
 <script src="https://gist.github.com/li2/2de13d883b02f2fdbdc712183c035d29.js"></script>
 
 
 
 ## Step3: Create A Single Fragment Activtiy
 
-Then you will create a single fragment activity:
+Then you will create a single fragment activity, code snippet:
 <script src="https://gist.github.com/li2/d9c37cb86b5ba7d2ce0bdc9e0e067c0f.js"></script>
 
 
 ## Step4: Create Two Fragments Activity
 
-If the activity has more than one fragment, you will use `show` & `hide` methods to manager these fragments:
+If the activity has more than one fragment, you will use `show` & `hide` methods to manager these fragments, code snippet:
 <script src="https://gist.github.com/li2/f682d2f6ef6e4b1316b7722fb7eedfd5.js"></script>
 
 The End.
