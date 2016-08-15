@@ -2,7 +2,7 @@
 layout: post
 title: 一个Android音频文本同步的英文有声读物App的开发过程
 category: Android
-tags: [android-fragmengts, android-viewpager]
+tags: [android-fragments, android-viewpager]
 ---
 
 “新概念英语”、“可可英语”、“亚马逊的audible有声书”、“扇贝听力”是我目前所知道的实现英文语音和文本同步的应用。

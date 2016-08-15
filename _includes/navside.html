@@ -8,7 +8,7 @@
         {% for category in site.categories %}     <!-- 这里是aside1的分类侧边栏-->
          <li><a href="#{{ category | first }}" data-toggle="tab">{{ category[0] }}</a></li>
         {% endfor %}
-        <li><a href="#tags" data-toggle="tab">{{ site.locals.tags }}</a></li>  
+        <li><a class="pjaxlink" href="{{ site.url_tags }}">{{ site.locals.tags }}</a></li>
         <li><a class="pjaxlink" href="{{ site.url_archives }}">{{ site.locals.archive }}</a></li>
         <li><a class="pjaxlink" href="{{ site.url_about }}">{{ site.locals.about }}</a></li>
       </ul>

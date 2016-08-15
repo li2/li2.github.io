@@ -1,18 +1,9 @@
 ---
 layout: page_no_comments
 title: <i class="fa fa-archive fa-lg"></i>
-titlename: 分类
+titlename: 标签
 comments: false
 ---
-<div class="title">
-    <p>
-    {% for category in site.categories %}
-    <a href="#{{ category | first }}">{{ category | first }}</a>
-   (<span  class="category-number">{{ category | last | size }}</span>)
-    {% endfor %}
-    </p>
-</div>
-<hr>
 
 {% for category in site.categories %}
 <a name="{{category | first }}" href="#{{ category | first }}">{{ category | first }}</a>

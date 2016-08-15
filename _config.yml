@@ -29,6 +29,7 @@ url_rss:            /pages/atom.xml
 url_about:          /pages/about.html
 url_archives:       /pages/archive.html
 url_atom:           /pages/atom.html
+url_tags:	    /pages/tags.html
 
 # gavatar头像及Favicon
 favicon:            /assets/img/favicon.ico
@@ -60,10 +61,10 @@ cates:
 
 # 中文本地化
 locals:
-  tags: 标签
-  about: 关于
-  newest: 最新文章
-  archive: 归档
+  tags: "# 标签"
+  about: "# 关于"
+  newest: "# 最新文章"
+  archive: "# 归档"
 
   
 # Background image to be tiled on all pages
