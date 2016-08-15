@@ -19,7 +19,7 @@ body, html {
 /* 左侧导航栏 */
 .aside1 {
   /*background-color: #1f2c39;*/
-  background-color: #1abc9c;
+  background-color: #a0c5a0;
   /*background-image: url(/public/img/bg_grid.jpg);*/
   /*width: 64px;*/
   height: 100%;
@@ -40,7 +40,7 @@ body, html {
 
 .aside1> .nav > li > a:hover {
   color:#fff;
-  background-color: #16a085;
+  background-color: #6AB344;
 }
 
 .aside1 > .nav-pills>li.active>a ,.nav-pills>li.active>a:hover,.nav-pills>li.active>a:focus {
