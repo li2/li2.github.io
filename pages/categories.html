@@ -1,0 +1,41 @@
+---
+layout: page_no_comments
+title: <i class="fa fa-archive fa-lg"></i>
+titlename: 分类
+comments: false
+---
+<div class="title">
+    <p>
+    {% for category in site.categories %}
+    <a href="#{{ category | first }}">{{ category | first }}</a>
+   (<span  class="category-number">{{ category | last | size }}</span>)
+    {% endfor %}
+    </p>
+</div>
+<hr>
+
+{% for category in site.categories %}
+<a name="{{category | first }}" href="#{{ category | first }}">{{ category | first }}</a>
+(<span  class="category-number">{{ category | last | size }}</span>)
+    <br>
+    {% assign sorted_tags = site.tags | sort %}
+    {% for tag in sorted_tags %}
+    {% assign zz = tag[1] | where: "category", category[0] | sort %}
+    {% if zz != empty %}
+    <a name="{{tag | first }}" href="#{{ tag | first }}">{{ tag | first }}</a>
+    (<span  class="category-number">{{ tag | last | size }}</span>)
+    <ul class="arc-list">
+	{% for post in zz %}
+	<li><span class="category-date">{{ post.date | date:"%Y-%m-%d"}}</span>
+	<a href="{{ post.url }}">{{ post.title }}</a>
+	</li>
+	{% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+    <hr>
+
+{% endfor %}
+
+
+
