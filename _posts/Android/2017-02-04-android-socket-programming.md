@@ -53,11 +53,11 @@ To support multiple clients socket connection, create a thread pool (through Exe
 - Java socket API: How to tell if a connection has been closed? We have to close stream and socket when disconnect. The right way to detect disconnect is to catch the IOException. commit #dee5bce
 
 
-![Server](https://github.com/li2/Learning_Android_Open_Source/blob/master/Socket/DemoServerSocket.png)
+![Server](/assets/img/android/DemoServerSocket.png)
 
-![Client1](https://github.com/li2/Learning_Android_Open_Source/blob/master/Socket/DemoClientSocket1.png)
+![Client1](/assets/img/android/DemoClientSocket1.png)
 
-![Client2](https://github.com/li2/Learning_Android_Open_Source/blob/master/Socket/DemoClientSocket2.png)
+![book-cover](/assets/img/android/DemoClientSocket2.png)
 
 ### [Source Code Link](https://github.com/li2/Learning_Android_Open_Source/tree/master/Socket)
 
