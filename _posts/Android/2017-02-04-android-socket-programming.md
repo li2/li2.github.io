@@ -10,30 +10,118 @@ tags: [android-http]
 文章链接：[http://li2.me/2017/02/android-socket-programming.html](http://li2.me/2017/02/android-socket-programming.html)
 
 
+### [Source Code Link](https://github.com/li2/Learning_Android_Open_Source/tree/master/Socket)
+
 ### ClientSocket
 
 An Android App which implements the client-side socket.
 
-`NetworkConnection` is used to manage the socket connection:
-
- 1. Connect to server: `public void connect(final String serverIp, final int serverPort)`
- 1. Disconnect to server: `public void disconnect(final String disconnectReason)`
- 1. Send data to server: `public void sendData(final String data)`
- 1. Receive data from server through a thread.
-
-It defines a callback for UI to update:
+`NetworkConnection` is a class designed to manage the socket connection:
 
 ```java
-public interface ConnectionListener {
-    void onConnected(final boolean isConnected, final String disconnectReason);
-    void onDataReceived(final String data);
-    void onDataSent(final String data, final boolean succeeded);
+// @author: weiyi.li, http://li2.me
+public class NetworkConnection {
+    /*
+     * A boolean flag to record connection status. When connection status changed,
+     * et: open/close socket, network disconnect,
+     * the flag will be updated and the callback will be invoked to notify UI.
+     */
+    private boolean mIsConnected;
+    
+    /** A callback for UI to update */
+    public interface ConnectionListener {
+        void onConnected(final boolean isConnected, final String disconnectReason);
+        void onDataReceived(final String data);
+        void onDataSent(final String data, final boolean succeeded);
+    }
+
+    /** Constructor */
+    public NetworkConnection(Context context, ConnectionListener listener) {}
+
+    /** Connect to server */
+    public void connect(final String serverIp, final int serverPort) {}
+
+    /** Disconnect to server */
+    public void disconnect(final String disconnectReason) {}
+    
+    /** Send data to server */
+    public void sendData(final String data) {}
+    
+    public boolean isConnected() {}
+    
+    /** Receive data from server through a thread when connected */
+    private void startReceiveThread() {
+        ...
+            public void run() {
+                try {
+                    while (isConnected() && !mReceiveThreadInterrupted) {
+                        mDataInputStream.readUTF();
+                    }
+                } catch (IOException e) {
+                    // consider as disconnection to server
+                }
+            }
+        ...
+    }
 }
+
 ```
 
-It has a boolean flag `mIsConnected` to record connection status. When connection status changed, et: open/close socket, network disconnect, it updates this flag, and invokes the callback to notify UI.
+Through this class, UI don't need to care about the details of connection (socket, input/output stream), just register the callback and use the public method to connect/disconnect/send data to server. commit #2f452ea
 
-So UI don't need to care about the details of connection (socket, input/output stream), just register this callback and use the public method to connect/disconnect/send data to server. commit #2f452ea
+```java
+// @author: weiyi.li, http://li2.me
+public class MainActivity extends AppCompatActivity {
+    private NetworkConnection mConnection;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        // Create connection
+        mConnection = new NetworkConnection(this, mConnectionListener);
+    }
+
+    @Override
+    protected void onDestroy() {
+        // Destroy connection
+        if (mConnection != null)
+        {
+            mConnection.disconnect("MainActivity.onDestroy");
+        }
+    }
+
+    @OnClick(R.id.connectBtn)
+    void connectToServer() {
+        if (!mConnection.isConnected()) {
+            mConnection.connect(ip, port);
+        } else {
+            mConnection.disconnect("User intent to disconnect");
+        }
+    }
+
+    @OnClick(R.id.sendBtn)
+    void sendToServer(String data) {
+        if (mConnection.isConnected()) {
+            mConnection.sendData(data);
+        }
+    }
+
+    private NetworkConnection.ConnectionListener mConnectionListener =
+        new NetworkConnection.ConnectionListener() {
+            @Override
+            public void onConnected(boolean isConnected, String disconnectReason) {
+                Log.d(TAG, "onConnected " + isConnected);
+            }
+
+            @Override
+            public void onDataReceived(String data) {
+                Log.d(TAG, "onDataReceived " + data);
+            }
+
+            @Override
+            public void onDataSent(String data, boolean succeeded) {}
+        };
+}
+```
 
 
 ### ServerSocket
@@ -58,9 +146,6 @@ To support multiple clients socket connection, create a thread pool (through Exe
 ![Client1](/assets/img/android/DemoClientSocket1.png)
 
 ![book-cover](/assets/img/android/DemoClientSocket2.png)
-
-### [Source Code Link](https://github.com/li2/Learning_Android_Open_Source/tree/master/Socket)
-
 
 ------
 
