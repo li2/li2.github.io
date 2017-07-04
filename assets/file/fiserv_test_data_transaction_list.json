@@ -37,6 +37,12 @@
             "type": "Charge",
             "where": "Apply Working Holiday Visa",
             "amount": "-111.11"
+        },
+        {
+            "date": "2017-06-30",
+            "type": "Charge",
+            "where": "Try to get a job !",
+            "amount": "6666.66"
         }
     ]
 }
