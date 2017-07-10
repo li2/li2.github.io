@@ -1,0 +1,52 @@
+{
+  "offers": [
+    {
+      "type": "mall",
+      "name": "Michael Lors",
+      "street": "430 W 51st St,",
+      "expire": "1",
+      "distance": "0.1",
+      "saved": "20.1"
+    },
+    {
+      "type": "mall",
+      "name": "Consulate of Hungary",
+      "street": "Wyndham St48",
+      "expire": "8",
+      "distance": "3.9",
+      "saved": "16.6"
+    },    
+    {
+      "type": "coffee",
+      "name": "The Bon Cafe",
+      "street": "Wakefield St85",
+      "expire": "2",
+      "distance": "0.8",
+      "saved": "10.7"
+    },
+    {
+      "type": "coffee",
+      "name": "Cafe Cloud 9",
+      "street": "Airedale St",
+      "expire": "8",
+      "distance": "2.9",
+      "saved": "7.1"
+    },
+    {
+      "type": "book",
+      "name": "The Corporate Centre",
+      "street": "Cook St60",
+      "expire": "6",
+      "distance": "3.2",
+      "saved": "17.8"
+    },
+    {
+      "type": "book",
+      "name": "Depot Eatery and Oyster Bar",
+      "street": "Federal St86",
+      "expire": "9",
+      "distance": "1.2",
+      "saved": "21.2"
+    }
+  ]
+}
