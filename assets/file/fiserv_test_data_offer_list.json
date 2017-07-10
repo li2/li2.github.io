@@ -6,7 +6,8 @@
       "street": "430 W 51st St,",
       "expire": "1",
       "distance": "0.1",
-      "saved": "20.1"
+      "saved": "20.1",
+      "coord": {"lon":"-36.8485","lat":"174.7633"}
     },
     {
       "type": "mall",
@@ -14,7 +15,8 @@
       "street": "Wyndham St48",
       "expire": "8",
       "distance": "3.9",
-      "saved": "16.6"
+      "saved": "16.6",
+      "coord": {"lon":"-36.8484","lat":"174.7632"}
     },    
     {
       "type": "coffee",
@@ -22,7 +24,8 @@
       "street": "Wakefield St85",
       "expire": "2",
       "distance": "0.8",
-      "saved": "10.7"
+      "saved": "10.7",
+      "coord": {"lon":"-36.8486","lat":"174.7639"}     
     },
     {
       "type": "coffee",
@@ -30,7 +33,8 @@
       "street": "Airedale St",
       "expire": "8",
       "distance": "2.9",
-      "saved": "7.1"
+      "saved": "7.1",
+      "coord": {"lon":"-36.8487","lat":"174.7632"}
     },
     {
       "type": "book",
@@ -38,7 +42,8 @@
       "street": "Cook St60",
       "expire": "6",
       "distance": "3.2",
-      "saved": "17.8"
+      "saved": "17.8",
+      "coord": {"lon":"-36.8489","lat":"174.7638"}
     },
     {
       "type": "book",
@@ -46,7 +51,8 @@
       "street": "Federal St86",
       "expire": "9",
       "distance": "1.2",
-      "saved": "21.2"
+      "saved": "21.2",
+      "coord": {"lon":"-36.8481","lat":"174.7630"}
     }
   ]
 }
