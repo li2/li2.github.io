@@ -5,7 +5,7 @@
         ],
         "target": {
             "namespace": "android_app",
-            "package_name": "me.li2.android.demo",
+            "package_name": "me.li2.android.demo.dev",
             "sha256_cert_fingerprints": [
                 "8F:C5:6D:D2:64:3D:05:4E:79:DF:56:17:21:9E:5D:8E:BF:1D:1D:42:60:64:EE:69:D0:BD:C4:5E:6F:D0:0E:22"
             ]
