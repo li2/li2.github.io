@@ -125,7 +125,9 @@ google_verify:
 bing_verify:         
 
 
-include: []
+include:
+ - .well-known
+ 
 exclude: ["README.md"]
 
 
